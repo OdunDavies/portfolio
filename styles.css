@@ -614,7 +614,7 @@ img {
 /* ====== Devloper Contact ====== */
 
 #devloperInfo {
-    display: flex;
+    display: center;
     flex-direction: row;
     justify-content: space-evenly;
 }
