@@ -616,7 +616,7 @@ img {
 #devloperInfo {
     display: center;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 #devoperContact {
