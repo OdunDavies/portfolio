@@ -242,6 +242,12 @@ img {
     width: 295px;
 }
 
+.home__img img {
+    border-radius: 16px;
+    top: 0.5rem;
+    margin: 25px;
+}
+
 @media (max-width: 915px) {
     #homeImage {
         width: 300px;
