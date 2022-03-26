@@ -237,8 +237,6 @@ img {
 .home__img {
     position: absolute;
     right: 0;
-    top: 0.5rem;
-    bottom: 0;
     width: 295px;
     margin-top: 20px;
 }
@@ -486,18 +484,18 @@ img {
         height: 80vh;
     }
     #Services {
-        width: 98.2vw;
+        width: 103vw;
         height: 60vh;
         margin: 0px;
         padding: 0px;
         display: flex;
         flex-direction: row;
         flex-flow: wrap;
-        justify-content: space-evenly;
+        text-align: center;
     }
     #VideoEditing {
         width: 150%;
-        height: 63%;
+        height: 100%;
     }
     #AudioMastery {
         width: 100%;
@@ -514,7 +512,7 @@ img {
     #Services div ul {
         display: flex;
         flex-direction: column;
-        text-align: start;
+        text-align: center;
     }
     .home__img {
         position: relative;
