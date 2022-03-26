@@ -441,7 +441,7 @@ img {
 
 #Services {
     width: 98.2vw;
-    height: 88vh;
+    height: 60vh;
     margin: 0px;
     padding: 0px;
     display: -webkit-box;
@@ -483,11 +483,11 @@ img {
 
 @media (max-width: 411px) {
     #servicePage {
-        height: 120vh;
+        height: 80vh;
     }
     #Services {
         width: 98.2vw;
-        height: 120vh;
+        height: 60vh;
         margin: 0px;
         padding: 0px;
         display: flex;
