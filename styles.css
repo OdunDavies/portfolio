@@ -390,6 +390,7 @@ img {
     .home__img {
         width: 457px;
         bottom: 15%;
+        top: auto;
     }
     .about__container,
     .skills__container {
