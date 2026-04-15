@@ -107,7 +107,7 @@ export default async function WorkPage({ params }: Props) {
           Interested in working together?
         </p>
         <a
-          href="mailto:hello@yourname.dev"
+          href="mailto:odunayodev@gmail.com"
           className="text-sm font-medium text-ink underline underline-offset-4 hover:text-accent transition-colors"
         >
           Get in touch →

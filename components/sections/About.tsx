@@ -30,6 +30,14 @@ export default function About() {
             not, the solution is simpler (and cheaper) than you expected.
           </p>
 
+          <p className="text-base text-muted leading-relaxed mb-10">
+            Outside of work, I&apos;m either deep in a football match, arguing
+            about tactics I&apos;ll never get to use, or quietly tinkering with
+            a side project that may or may not ever see the light of day. I
+            believe good software, like good football, is about the team — and
+            I bring that same mindset to every client I work with.
+          </p>
+
           {/* Skills */}
           <div className="mb-10">
             <p className="text-xs uppercase tracking-widest text-accent mb-3 font-medium">

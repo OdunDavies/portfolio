@@ -59,7 +59,7 @@ export default function Hero() {
             <CTAButton variant="ghost" href="#work">
               See My Work
             </CTAButton>
-            <CTAButton variant="filled" href="mailto:hello@yourname.dev">
+            <CTAButton variant="filled" href="https://wa.me/2348055048536">
               Let&apos;s Talk
             </CTAButton>
           </motion.div>

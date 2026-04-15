@@ -6,7 +6,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://yourname.dev'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://odunayoidowu.netlify.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
