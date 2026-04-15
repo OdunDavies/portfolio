@@ -83,7 +83,7 @@ export default function Contact() {
         </div>
 
         <div className="flex flex-wrap gap-4 mb-12">
-          <CTAButton variant="filled" href="mailto:hello@yourname.dev">
+          <CTAButton variant="filled" href="https://wa.me/2348055048536">
             Send me a message
           </CTAButton>
         </div>
