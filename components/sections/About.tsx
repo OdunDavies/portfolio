@@ -30,25 +30,25 @@ export default function About() {
       className="py-24 px-6 border-t border-border"
     >
       <div className="max-w-5xl mx-auto">
-        <NumberedHeading number="04" label="Background" title="About Me" />
+        <NumberedHeading number="05" label="Background" title="About Me" />
 
         <div className="max-w-2xl">
           <p className="text-base text-muted leading-relaxed mb-6">
-            It started with curiosity about how things work — first on the hardware
-            side, then in code. That curiosity found a deliberate path through IT
+            My curiosity about how things work started on the hardware side before
+            moving into code. That curiosity found a deliberate path through IT
             support, web development, and AI integration, and it keeps pulling me
             toward problems that sit at the intersection of infrastructure and
             interface.
           </p>
           <p className="text-base text-muted leading-relaxed mb-6">
-            IT Support Technician and freelance technologist with hands-on experience
-            across helpdesk support, web application development, and AI integration.
-            I deliver a 95% first-contact resolution rate in enterprise environments
-            while simultaneously building and shipping production-grade web apps,
-            AI-powered tools, and digital products for Nigerian businesses.
+            I&apos;m an IT Support Technician and freelance technologist with hands-on
+            experience across helpdesk support, web application development, and AI
+            integration. I deliver a 95% first-contact resolution rate in enterprise
+            environments while simultaneously building and shipping production-grade
+            web apps, AI-powered tools, and digital products for Nigerian businesses.
           </p>
           <p className="text-base text-muted leading-relaxed mb-10">
-            Self-directed, fast-learning, and equally comfortable on the terminal
+            I&apos;m self-directed, fast-learning, and equally comfortable on the terminal
             or the ticket queue.
           </p>
 

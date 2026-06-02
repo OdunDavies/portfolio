@@ -39,9 +39,10 @@ export default function Process() {
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
           className="text-base text-muted leading-relaxed mb-12 max-w-2xl"
         >
-          Every project starts like a support ticket — find the real problem,
-          then build the right solution. I carry that discipline from the
-          helpdesk into every web project I take on.
+          Every project starts with a conversation — understanding the
+          problem, the audience, and what success looks like before I write
+          a single line of code. That clarity is what makes everything
+          after it faster.
         </motion.p>
 
         <motion.div

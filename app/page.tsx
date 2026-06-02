@@ -3,6 +3,7 @@ import Hero from '@/components/sections/Hero'
 import Work from '@/components/sections/Work'
 import Experience from '@/components/sections/Experience'
 import Process from '@/components/sections/Process'
+import Clients from '@/components/sections/Clients'
 import About from '@/components/sections/About'
 import Tools from '@/components/sections/Tools'
 import Contact from '@/components/sections/Contact'
@@ -20,6 +21,7 @@ export default function HomePage() {
       <Work />
       <Experience />
       <Process />
+      <Clients />
       <About />
       <Tools />
       <Contact />

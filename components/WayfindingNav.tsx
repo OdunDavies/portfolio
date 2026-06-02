@@ -7,9 +7,10 @@ const sections = [
   { id: 'work', number: '01', label: 'Work' },
   { id: 'experience', number: '02', label: 'Career' },
   { id: 'process', number: '03', label: 'Approach' },
-  { id: 'about', number: '04', label: 'About' },
-  { id: 'tools', number: '05', label: 'Stack' },
-  { id: 'contact', number: '06', label: 'Reach' },
+  { id: 'clients', number: '04', label: 'Clients' },
+  { id: 'about', number: '05', label: 'About' },
+  { id: 'tools', number: '06', label: 'Stack' },
+  { id: 'contact', number: '07', label: 'Reach' },
 ]
 
 export default function WayfindingNav() {

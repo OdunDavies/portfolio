@@ -18,7 +18,7 @@ const item: Variants = {
 const infoRows = [
   { label: 'Who', value: 'Odunayo Idowu' },
   { label: 'What', value: 'IT Support  •  Web Dev  •  AI Integration' },
-  { label: 'Where', value: 'Kuje, Abuja (Remote)' },
+  { label: 'Where', value: 'FCT, Nigeria (Remote)' },
   { label: 'How', value: 'Diagnose  →  Plan  →  Build  →  Deliver  →  Support' },
   { label: 'When', value: 'Available' },
 ]

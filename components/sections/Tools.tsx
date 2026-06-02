@@ -42,7 +42,7 @@ export default function Tools() {
       className="py-24 px-6 border-t border-border"
     >
       <div className="max-w-5xl mx-auto">
-        <NumberedHeading number="05" label="Stack" title="Tools & Technologies" />
+        <NumberedHeading number="06" label="Stack" title="Tools & Technologies" />
 
         <p className="text-base text-muted leading-relaxed mb-10 max-w-2xl">
           Comfortable across the stack — from hardware provisioning to cloud

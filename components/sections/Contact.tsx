@@ -23,10 +23,10 @@ export default function Contact() {
       className="py-24 px-6 border-t border-border"
     >
       <div className="max-w-5xl mx-auto">
-        <NumberedHeading number="06" label="Reach" title="Get In Touch" />
+        <NumberedHeading number="07" label="Reach" title="Get In Touch" />
 
         <p className="text-base text-muted leading-relaxed mb-10 max-w-md">
-          Based in Kuje, Abuja. Available for freelance work, IT support contracts,
+          Based in FCT, Nigeria. Available for freelance work, IT support contracts,
           and collaboration. The best time to talk is before you&apos;re sure what
           you need.
         </p>
