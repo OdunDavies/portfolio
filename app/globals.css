@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #F9F7F4;
-  --color-ink: #111111;
+  --color-background: #0a0a0a;
+  --color-ink: #e8e8e8;
   --color-accent: #C4622D;
-  --color-muted: #6B6B6B;
-  --color-border: #E5E2DE;
-  --color-surface-raised: #F3F0EC;
-  --color-surface-highest: #EDE9E4;
+  --color-muted: #878787;
+  --color-border: #ffffff14;
+  --color-surface-raised: #141414;
+  --color-surface-highest: #1e1e1e;
 
   --font-sans: 'Inter Variable', Inter, sans-serif;
   --font-mono: var(--font-geist-mono);
@@ -15,8 +15,8 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #F9F7F4;
-  color: #111111;
+  background-color: #0a0a0a;
+  color: #e8e8e8;
 }
 
 * {
@@ -26,7 +26,7 @@ html {
 
 ::selection {
   background: #C4622D;
-  color: #F9F7F4;
+  color: #0a0a0a;
 }
 
 .gradient-text {
