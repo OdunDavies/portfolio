@@ -28,6 +28,10 @@ export default function Work() {
       <div className="max-w-5xl mx-auto">
         <NumberedHeading number="01" label="Recently" title="Selected Projects" />
 
+        <p className="text-xs text-muted font-mono tracking-wide -mt-8 mb-8">
+          Click a project name to view it live &rarr;
+        </p>
+
         <motion.div
           variants={container}
           initial="hidden"
