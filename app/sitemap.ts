@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { projects } from '@/lib/projects'
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://odunayoidowu.netlify.app'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://odunayoidowu.vercel.app'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const projectPages: MetadataRoute.Sitemap = projects.map((p) => ({
