@@ -11,36 +11,36 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://odunayoidowu.netli
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'Odunayo Idowu — Freelance Web Developer',
+    default: 'Odunayo Idowu — IT Support & Web Developer',
     template: '%s | Odunayo Idowu',
   },
   description:
-    'Freelance web developer who listens before building. I help businesses ship web products that actually solve problems — faster leads, smoother operations, happier customers.',
-  keywords: ['freelance web developer', 'Next.js developer', 'TypeScript', 'React developer'],
+    'IT Support Technician and freelance web developer. 95% first-contact resolution rate. Building and shipping production-grade web apps and AI-powered tools for Nigerian businesses.',
+  keywords: ['IT support technician', 'web developer', 'Next.js developer', 'freelance technologist', 'Abuja'],
   authors: [{ name: 'Odunayo Idowu', url: BASE_URL }],
   creator: 'Odunayo Idowu',
   openGraph: {
     type: 'website',
     locale: 'en_GB',
     url: BASE_URL,
-    siteName: 'Odunayo Idowu — Freelance Web Developer',
-    title: 'Odunayo Idowu — Freelance Web Developer',
+    siteName: 'Odunayo Idowu — IT Support & Web Developer',
+    title: 'Odunayo Idowu — IT Support & Web Developer',
     description:
-      'Freelance web developer who listens before building. Clean code, clear communication, results you can measure.',
+      'IT Support Technician and freelance technologist. Helpdesk support, web apps, AI integration, and VPS infrastructure.',
     images: [
       {
         url: '/odunayo.jpg',
         width: 1200,
         height: 630,
-        alt: 'Odunayo Idowu — Freelance Web Developer',
+        alt: 'Odunayo Idowu — IT Support & Web Developer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Odunayo Idowu — Freelance Web Developer',
+    title: 'Odunayo Idowu — IT Support & Web Developer',
     description:
-      'Freelance web developer who listens before building. Clean code, clear communication, results you can measure.',
+      'IT Support Technician and freelance technologist. Helpdesk support, web apps, AI integration, and VPS infrastructure.',
     images: ['/odunayo.jpg'],
   },
   robots: {
@@ -55,9 +55,9 @@ const personSchema = {
   '@type': 'Person',
   name: 'Odunayo Idowu',
   url: BASE_URL,
-  jobTitle: 'Freelance Web Developer',
+  jobTitle: 'IT Support Technician & Freelance Web Developer',
   description:
-    'Freelance web developer who listens before building. Specialising in Next.js, TypeScript, and React.',
+    'IT Support Technician and freelance technologist with hands-on experience across helpdesk support, web application development, and AI integration.',
   sameAs: [
     'https://www.linkedin.com/in/odunayo-idowu-a114ab217/',
     'https://github.com/OdunDavies',

@@ -37,8 +37,9 @@ export default function Contact() {
           Got a project in mind?
         </h2>
         <p className="text-base text-muted leading-relaxed mb-10 max-w-md">
-          Tell me about your business and what you&apos;re trying to build. Even
-          if you&apos;re not sure yet — that&apos;s the best time to talk.
+          Based in Kuje, Abuja. Tell me about your business and what you&apos;re
+          trying to build. Even if you&apos;re not sure yet — that&apos;s the
+          best time to talk.
         </p>
 
         {/* Project type selector */}

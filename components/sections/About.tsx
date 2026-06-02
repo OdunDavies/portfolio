@@ -3,6 +3,21 @@
 import { motion } from 'framer-motion'
 import SectionHeading from '@/components/ui/SectionHeading'
 
+const competencies = [
+  'IT Support & Helpdesk',
+  'Web Development',
+  'AI Integration',
+  'Cloud & VPS Infrastructure',
+  'Shopify Development',
+  'React / Next.js',
+  'Linux & VPS Administration',
+  'Automation & Scripting',
+  'Device Provisioning',
+  'User Account Management',
+  'IT Documentation',
+  'API Integration',
+]
+
 export default function About() {
   return (
     <motion.section
@@ -19,34 +34,44 @@ export default function About() {
 
         <div className="max-w-2xl">
           <p className="text-base text-muted leading-relaxed mb-6">
-            I&apos;m a freelance web developer. I&apos;ve spent the last five
-            years helping small businesses and growing startups build web
-            products that actually do something — attract clients, save time,
-            or both.
+            IT Support Technician and freelance technologist with hands-on
+            experience across helpdesk support, web application development,
+            and AI integration. I deliver a 95% first-contact resolution rate
+            in enterprise environments while simultaneously building and
+            shipping production-grade web apps, AI-powered tools, and digital
+            products for Nigerian businesses and creatives.
           </p>
-          <p className="text-base text-muted leading-relaxed mb-10">
-            I work best when I&apos;m involved early. Tell me your business
-            problem before you tell me what you want built — more often than
-            not, the solution is simpler (and cheaper) than you expected.
-          </p>
-
-          <p className="text-base text-muted leading-relaxed mb-10">
-            Outside of work, I&apos;m either deep in a football match, arguing
-            about tactics I&apos;ll never get to use, or quietly tinkering with
-            a side project that may or may not ever see the light of day. I
-            believe good software, like good football, is about the team — and
-            I bring that same mindset to every client I work with.
+          <p className="text-base text-muted leading-relaxed mb-6">
+            Self-directed, fast-learning, and equally comfortable on the
+            terminal or the ticket queue.
           </p>
 
-          {/* Skills */}
+          {/* Core Competencies */}
           <div className="mb-10">
+            <p className="text-xs uppercase tracking-widest text-accent mb-4 font-medium">
+              Core Competencies
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {competencies.map((c) => (
+                <span
+                  key={c}
+                  className="border border-border text-xs px-2.5 py-1 text-muted tracking-wide"
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Education */}
+          <div>
             <p className="text-xs uppercase tracking-widest text-accent mb-3 font-medium">
-              Technologies
+              Education
             </p>
-            <p className="text-sm text-muted leading-relaxed">
-              Next.js, React, TypeScript, Node.js, Tailwind CSS, PostgreSQL,
-              Supabase, Framer Motion, Vercel, Figma
+            <p className="text-sm text-ink font-medium">
+              B.Sc. Information and Communication Science
             </p>
+            <p className="text-sm text-muted">University of Ilorin, Kwara State &middot; Feb 2018 – Oct 2023</p>
           </div>
 
         </div>

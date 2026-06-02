@@ -1,64 +1,110 @@
-import type { Project, ProcessStepData } from './types'
+import type { Project, ProcessStepData, Experience } from './types'
 
 export const projects: Project[] = [
-  {
-    slug: 'muscleatlas',
-    title: 'MuscleAtlas',
-    problem:
-      'They needed a platform where fitness enthusiasts could log workouts, track muscle progress, and access structured training content — all in one place.',
-    outcome: 'Launched to active users with a full workout logging and content system.',
-    tags: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
-    href: 'https://muscleatlas.site',
-    imageSrc: '/images/muscleatlas.jpg',
-    imageAlt: 'MuscleAtlas fitness platform — workout tracking and training content',
-  },
-  {
-    slug: 'joseph-ali',
-    title: 'Joseph Ali — Videographer',
-    problem:
-      'They needed a professional portfolio site that showcased their video work and made it easy for clients to reach out and book.',
-    outcome: 'Clean, fast portfolio that puts the work front and centre.',
-    tags: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Netlify'],
-    href: 'https://josephali.netlify.app',
-    imageSrc: '/images/josephali.jpg',
-    imageAlt: 'Joseph Ali videographer portfolio website',
-  },
   {
     slug: 'artsybrandss',
     title: 'ArtsyBrands',
     problem:
-      'They needed an e-commerce and brand platform that felt as creative and premium as the jewellery and products they sell.',
-    outcome: 'Full e-commerce experience with a distinctive visual identity.',
-    tags: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+      'They needed a complete e-commerce web infrastructure — domain setup, email deliverability, SSL, and a storefront that matched their creative brand identity.',
+    outcome: 'Production-ready storefront with proper domain routing, transactional email, and a distinctive visual identity.',
+    tags: ['Next.js', 'TypeScript', 'Resend', 'Cloudflare', 'React Email'],
     href: 'https://artsybrandss.com',
     imageSrc: '/images/artsybrandss.jpg',
     imageAlt: 'ArtsyBrands e-commerce platform for jewellery and creative products',
+    status: 'shipped',
+  },
+  {
+    slug: 'openclaw',
+    title: 'OpenClaw — AI Agent',
+    problem:
+      'Needed a self-hosted AI agent on a VPS with real-time Telegram interaction, without relying on third-party hosted solutions.',
+    outcome: 'Deployed and configured OpenClaw on a Hetzner VPS with Gemini API and Telegram interface — full Linux server administration.',
+    tags: ['Hetzner VPS', 'Gemini API', 'Linux/Ubuntu', 'PM2', 'systemd', 'Telegram'],
+    href: '#',
+    imageSrc: '/images/openclaw.jpg',
+    imageAlt: 'OpenClaw self-hosted AI agent on Hetzner VPS',
+    status: 'shipped',
+  },
+  {
+    slug: 'proposely',
+    title: 'Proposely',
+    problem:
+      'Freelancers in Nigeria spend hours writing proposals. They needed an AI-powered tool that generates professional, client-ready proposals in minutes.',
+    outcome: 'In development — React/Next.js front-end with Anthropic API back-end, targeting Nigerian SMEs and freelancers.',
+    tags: ['Next.js', 'Anthropic API', 'TypeScript', 'Tailwind CSS'],
+    href: '#',
+    imageSrc: '/images/proposely.jpg',
+    imageAlt: 'Proposely — AI proposal generator for freelancers',
+    status: 'development',
+  },
+  {
+    slug: 'muscleatlas',
+    title: 'MuscleAtlas',
+    problem:
+      'Fitness enthusiasts needed a platform to log workouts, track muscle progress by targeting specific muscle groups, and access structured training content.',
+    outcome: 'In development — interactive muscle-group targeting and workout tracking web application.',
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    href: 'https://muscleatlas.site',
+    imageSrc: '/images/muscleatlas.jpg',
+    imageAlt: 'MuscleAtlas fitness platform — workout tracking and training content',
+    status: 'development',
   },
 ]
 
 export const processSteps: ProcessStepData[] = [
   {
     number: '01',
-    title: 'Listen',
+    title: 'Diagnose',
     description:
-      'Before I open my editor, I want to understand your business, your customers, and what success actually looks like for you. Most problems aren\'t solved with code — they\'re solved with clarity.',
+      'Every project starts like a support ticket: I find the real problem before proposing a fix. Most of the time, the solution isn\'t what you expected — and it\'s simpler.',
   },
   {
     number: '02',
-    title: 'Clarify',
+    title: 'Plan',
     description:
-      'I turn what I\'ve heard into a clear brief: goals, non-goals, user journeys, and technical constraints. You sign off before a single line of code is written.',
+      'Once I understand the root issue, I lay out the architecture, timeline, and scope — whether it\'s a network config or a full-stack app. You sign off before I start.',
   },
   {
     number: '03',
     title: 'Build',
     description:
-      'I build in focused sprints with regular check-ins. You can see progress every step of the way — no disappearing for three weeks and hoping for the best.',
+      'Focused execution with regular check-ins. No disappearing for weeks. You see progress as it happens.',
   },
   {
     number: '04',
-    title: 'Iterate',
+    title: 'Deliver',
     description:
-      'Real users find things we didn\'t expect. After launch, I stay available to refine, improve, and make sure what we built actually works in the wild.',
+      'Production deployment, DNS configs, documentation — everything needed to hand over something that actually runs in the real world.',
+  },
+  {
+    number: '05',
+    title: 'Support',
+    description:
+      'After launch, I stay on. Issues come up, features get requested — I\'m available to iterate and keep things running.',
+  },
+]
+
+export const experience: Experience[] = [
+  {
+    role: 'IT Support Personnel (Intern)',
+    company: 'Transmission Company of Nigeria',
+    period: 'Feb 2024 – Oct 2024',
+    bullets: [
+      'Provisioned and configured desktops and laptops end-to-end — OS setup, software installation, and user account configuration — delivering production-ready devices to incoming staff.',
+      'Maintained a 95% first-contact resolution rate across hardware, software, and connectivity tickets, minimising staff downtime.',
+      'Diagnosed and resolved printer and workstation issues in collaboration with senior IT staff; maintained accurate resolution logs.',
+      'Authored and updated internal IT documentation and knowledge-base articles, improving self-service resolution rates for staff.',
+      'Managed user account provisioning, device compliance checks, and access management workflows during onboarding/offboarding cycles.',
+      'Tracked hardware inventory using Microsoft Excel, generating reports and managing asset records for the IT team.',
+    ],
+  },
+  {
+    role: 'Data Analyst Intern',
+    company: 'Abuja Electricity Distribution Company',
+    period: 'Aug 2020 – Jan 2021',
+    bullets: [
+      'Analysed operational datasets and produced actionable reports using Microsoft Excel pivot tables and charts for decision-makers.',
+      'Built and maintained interactive Excel dashboards visualising key operational metrics for non-technical stakeholders.',
+    ],
   },
 ]

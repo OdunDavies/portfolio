@@ -36,9 +36,16 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
       {/* Content */}
       <div className="flex flex-col justify-center gap-4 md:w-1/2">
-        <h3 className="text-2xl font-medium tracking-tight text-ink">
-          {project.title}
-        </h3>
+        <div className="flex items-center gap-3">
+          <h3 className="text-2xl font-medium tracking-tight text-ink">
+            {project.title}
+          </h3>
+          {project.status === 'development' && (
+            <span className="text-[10px] uppercase tracking-widest border border-amber-600/30 text-amber-700 px-2 py-0.5 leading-none">
+              In Dev
+            </span>
+          )}
+        </div>
 
         <p className="text-sm text-muted leading-relaxed">
           <span className="font-medium text-ink">They needed</span>{' '}
@@ -60,14 +67,16 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           ))}
         </div>
 
-        <a
-          href={project.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-ink underline underline-offset-4 decoration-border hover:decoration-ink transition-colors mt-2 w-fit"
-        >
-          View project →
-        </a>
+        {project.href !== '#' && (
+          <a
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-ink underline underline-offset-4 decoration-border hover:decoration-ink transition-colors mt-2 w-fit"
+          >
+            View project →
+          </a>
+        )}
       </div>
     </motion.article>
   )

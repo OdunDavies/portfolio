@@ -33,26 +33,26 @@ export default function Hero() {
             variants={item}
             className="text-accent uppercase tracking-widest text-xs font-medium mb-6"
           >
-            Freelance Web Developer
+            IT Support Technician  •  Freelance Technologist  •  Web Developer
           </motion.p>
 
           <motion.h1
             variants={item}
             className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-ink leading-[1.1] mb-8"
           >
-            You need a website{' '}
+            Equally comfortable{' '}
             <br className="hidden md:block" />
-            that works.{' '}
-            <span className="text-accent">Let&apos;s build it.</span>
+            on the terminal{' '}
+            <span className="text-accent">or the ticket queue.</span>
           </motion.h1>
 
           <motion.p
             variants={item}
             className="text-lg md:text-xl text-muted leading-relaxed mb-10 max-w-xl"
           >
-            I start every project the same way — by listening. Because the best
-            code solves the right problem, and that only happens when I
-            understand your business first.
+            IT support by day, web developer by project. I deliver 95% first-contact
+            resolution in enterprise environments and ship production-grade web apps
+            for Nigerian businesses and creatives.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-wrap gap-4">
