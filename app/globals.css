@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  /* Color palette */
   --color-background: #F9F7F4;
   --color-ink: #111111;
   --color-accent: #C4622D;
   --color-muted: #6B6B6B;
   --color-border: #E5E2DE;
+  --color-surface-raised: #F3F0EC;
+  --color-surface-highest: #EDE9E4;
 
-  /* Typography */
   --font-sans: 'Inter Variable', Inter, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
@@ -22,4 +22,95 @@ html {
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #C4622D;
+  color: #F9F7F4;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #C4622D 0%, #E8915A 50%, #C4622D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.reticule-link {
+  position: relative;
+  isolation: isolate;
+  padding-block: 0.6em;
+  line-height: 1;
+}
+
+.reticule-link .reticule-corners {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.reticule-link .reticule-corners span {
+  opacity: 0;
+  border: 1px solid #C4622D;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  transition: opacity 0.18s ease-out, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reticule-link .reticule-corners span:first-child {
+  border-bottom: 0;
+  border-right: 0;
+  top: -2px;
+  left: -2px;
+  transform: translate(-4px, -4px);
+}
+
+.reticule-link .reticule-corners span:nth-child(2) {
+  border-bottom: 0;
+  border-left: 0;
+  top: -2px;
+  right: -2px;
+  transform: translate(4px, -4px);
+}
+
+.reticule-link .reticule-corners span:nth-child(3) {
+  border-top: 0;
+  border-left: 0;
+  bottom: -2px;
+  right: -2px;
+  transform: translate(4px, 4px);
+}
+
+.reticule-link .reticule-corners span:nth-child(4) {
+  border-top: 0;
+  border-right: 0;
+  bottom: -2px;
+  left: -2px;
+  transform: translate(-4px, 4px);
+}
+
+.reticule-link:hover .reticule-corners span,
+.reticule-link:focus-visible .reticule-corners span {
+  opacity: 1;
+  transform: translate(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reticule-link .reticule-corners span {
+    transition: none;
+    transform: none;
+  }
+  .gradient-text {
+    background: none;
+    -webkit-text-fill-color: #C4622D;
+    color: #C4622D;
+  }
+}
+
+@media (max-width: 767px) {
+  .wayfinding-desktop {
+    display: none;
+  }
 }

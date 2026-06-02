@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import Hero from '@/components/sections/Hero'
 import Work from '@/components/sections/Work'
-import Process from '@/components/sections/Process'
 import Experience from '@/components/sections/Experience'
+import Process from '@/components/sections/Process'
 import About from '@/components/sections/About'
+import Tools from '@/components/sections/Tools'
 import Contact from '@/components/sections/Contact'
 
 export const metadata: Metadata = {
@@ -17,9 +18,10 @@ export default function HomePage() {
     <>
       <Hero />
       <Work />
-      <Process />
       <Experience />
+      <Process />
       <About />
+      <Tools />
       <Contact />
     </>
   )

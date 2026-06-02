@@ -1,8 +1,7 @@
 'use client'
 
 import { motion, type Variants } from 'framer-motion'
-import SectionHeading from '@/components/ui/SectionHeading'
-import ProcessStep from '@/components/ProcessStep'
+import NumberedHeading from '@/components/ui/NumberedHeading'
 import { processSteps } from '@/lib/projects'
 
 const container: Variants = {
@@ -27,7 +26,23 @@ export default function Process() {
       className="py-24 px-6 border-t border-border"
     >
       <div className="max-w-5xl mx-auto">
-        <SectionHeading label="How I Work" title="The Process" />
+        <NumberedHeading
+          number="03"
+          label="Approach"
+          title="Diagnose. Plan. Build. Deliver. Support."
+        />
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
+          className="text-base text-muted leading-relaxed mb-12 max-w-2xl"
+        >
+          Every project starts like a support ticket — find the real problem,
+          then build the right solution. I carry that discipline from the
+          helpdesk into every web project I take on.
+        </motion.p>
 
         <motion.div
           variants={container}
@@ -38,7 +53,11 @@ export default function Process() {
         >
           {processSteps.map((step) => (
             <motion.div key={step.number} variants={item}>
-              <ProcessStep {...step} />
+              <div className="border-t border-border pt-6">
+                <p className="font-mono text-accent text-sm mb-3">{step.number}</p>
+                <h3 className="text-lg font-medium text-ink mb-2">{step.title}</h3>
+                <p className="text-sm text-muted leading-relaxed">{step.description}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

@@ -5,6 +5,8 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
+import WayfindingNav from '@/components/WayfindingNav'
+import ScrollToTop from '@/components/ScrollToTop'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://odunayoidowu.vercel.app'
 
@@ -83,6 +85,8 @@ export default function RootLayout({
       <body className="bg-background text-ink font-sans antialiased">
         <ScrollProgress />
         <Navbar />
+        <WayfindingNav />
+        <ScrollToTop />
         <main id="main-content">{children}</main>
         <Footer />
       </body>

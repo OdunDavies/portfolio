@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import SectionHeading from '@/components/ui/SectionHeading'
+import NumberedHeading from '@/components/ui/NumberedHeading'
 
 const competencies = [
   'IT Support & Helpdesk',
@@ -30,25 +30,30 @@ export default function About() {
       className="py-24 px-6 border-t border-border"
     >
       <div className="max-w-5xl mx-auto">
-        <SectionHeading label="About" title="Odunayo Idowu" />
+        <NumberedHeading number="04" label="Background" title="About Me" />
 
         <div className="max-w-2xl">
           <p className="text-base text-muted leading-relaxed mb-6">
-            IT Support Technician and freelance technologist with hands-on
-            experience across helpdesk support, web application development,
-            and AI integration. I deliver a 95% first-contact resolution rate
-            in enterprise environments while simultaneously building and
-            shipping production-grade web apps, AI-powered tools, and digital
-            products for Nigerian businesses and creatives.
+            It started with curiosity about how things work — first on the hardware
+            side, then in code. That curiosity found a deliberate path through IT
+            support, web development, and AI integration, and it keeps pulling me
+            toward problems that sit at the intersection of infrastructure and
+            interface.
           </p>
           <p className="text-base text-muted leading-relaxed mb-6">
-            Self-directed, fast-learning, and equally comfortable on the
-            terminal or the ticket queue.
+            IT Support Technician and freelance technologist with hands-on experience
+            across helpdesk support, web application development, and AI integration.
+            I deliver a 95% first-contact resolution rate in enterprise environments
+            while simultaneously building and shipping production-grade web apps,
+            AI-powered tools, and digital products for Nigerian businesses.
+          </p>
+          <p className="text-base text-muted leading-relaxed mb-10">
+            Self-directed, fast-learning, and equally comfortable on the terminal
+            or the ticket queue.
           </p>
 
-          {/* Core Competencies */}
           <div className="mb-10">
-            <p className="text-xs uppercase tracking-widest text-accent mb-4 font-medium">
+            <p className="font-mono text-xs text-accent tracking-wide mb-4 uppercase">
               Core Competencies
             </p>
             <div className="flex flex-wrap gap-2">
@@ -63,9 +68,8 @@ export default function About() {
             </div>
           </div>
 
-          {/* Education */}
           <div>
-            <p className="text-xs uppercase tracking-widest text-accent mb-3 font-medium">
+            <p className="font-mono text-xs text-accent tracking-wide mb-3 uppercase">
               Education
             </p>
             <p className="text-sm text-ink font-medium">
@@ -73,7 +77,6 @@ export default function About() {
             </p>
             <p className="text-sm text-muted">University of Ilorin, Kwara State &middot; Feb 2018 – Oct 2023</p>
           </div>
-
         </div>
       </div>
     </motion.section>
