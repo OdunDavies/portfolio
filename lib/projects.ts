@@ -38,18 +38,6 @@ export const projects: Project[] = [
     status: 'shipped',
   },
   {
-    slug: 'proposely',
-    title: 'Proposely',
-    problem:
-      'Freelancers in Nigeria spend hours writing proposals. They need an AI-powered tool that generates professional, client-ready proposals in minutes.',
-    outcome: 'In development — React/Next.js front-end with Anthropic API back-end, targeting Nigerian SMEs and freelancers.',
-    tags: ['Next.js', 'Anthropic API', 'TypeScript', 'Tailwind CSS'],
-    href: '#',
-    imageSrc: '/images/proposely.jpg',
-    imageAlt: 'Proposely — AI proposal generator for freelancers',
-    status: 'development',
-  },
-  {
     slug: 'muscleatlas',
     title: 'MuscleAtlas',
     problem:
@@ -59,7 +47,7 @@ export const projects: Project[] = [
     href: 'https://muscleatlas.site',
     imageSrc: '/images/muscleatlas.jpg',
     imageAlt: 'MuscleAtlas fitness platform — workout tracking and training content',
-    status: 'development',
+    status: 'shipped',
   },
 ]
 
