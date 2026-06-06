@@ -7,6 +7,7 @@ import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
 import WayfindingNav from '@/components/WayfindingNav'
 import ScrollToTop from '@/components/ScrollToTop'
+import ChatWidget from '@/components/ChatWidget'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://odunayoidowu.vercel.app'
 
@@ -89,6 +90,7 @@ export default function RootLayout({
         <ScrollToTop />
         <main id="main-content">{children}</main>
         <Footer />
+        <ChatWidget />
       </body>
     </html>
   )

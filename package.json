@@ -8,7 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^3.0.68",
+    "@ai-sdk/react": "^3.0.199",
     "@fontsource-variable/inter": "^5.2.8",
+    "ai": "^6.0.197",
     "framer-motion": "^12.38.0",
     "geist": "^1.7.0",
     "next": "16.2.0",

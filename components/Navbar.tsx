@@ -7,7 +7,7 @@ const navLinks = [
   { label: 'Work', href: '#work' },
   { label: 'Process', href: '#process' },
   { label: 'About', href: '#about' },
-  { label: 'AI Chat', href: 'https://chatbot-odunayo.vercel.app', external: true as const },
+  { label: 'AI Chat', href: '#chat' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -40,11 +40,10 @@ export default function Navbar() {
         {/* Nav links */}
         <nav aria-label="Primary navigation">
           <ul className="flex items-center gap-7" role="list">
-            {navLinks.map(({ label, href, external }) => (
+            {navLinks.map(({ label, href }) => (
               <li key={label}>
                 <a
                   href={href}
-                  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className="text-sm text-muted hover:text-ink transition-colors duration-200 hover:underline underline-offset-4"
                 >
                   {label}
