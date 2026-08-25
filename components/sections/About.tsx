@@ -29,32 +29,33 @@ export default function About() {
             </p>
           </div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-80px' }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } } }}
-          >
-            <p className="mono-label text-muted mb-4">Experience</p>
-            <motion.ul variants={{ hidden: {}, show: { transition: { staggerChildren: 0.07 } } }} className="divide-y divide-border border-y border-border mb-8">
-              <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
-                <span className="text-sm"><span className="font-medium text-ink">Acacia — IT Support</span> <span className="text-muted">· 2025–2026</span></span>
-                <span className="text-muted text-xs block mt-1 leading-relaxed">Enterprise IT support covering device provisioning and lifecycle management, endpoint hardening, user account provisioning and access control, hardware inventory and asset tracking, plus internal knowledge-base documentation. First-contact resolution focus with clear hand-offs to engineering when needed.</span>
-              </motion.li>
-              <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
-                <span className="text-sm"><span className="font-medium text-ink">Freelance — Full-stack & AI</span> <span className="text-muted">— 2023–2026</span></span>
-                <span className="text-muted text-xs block mt-1 leading-relaxed">Independent builds for startups and SMEs worldwide — e-commerce (ArtsyBrands, Joetheboy), corporate platforms (HybridGroups), and AI fitness products (MuscleAtlas). Owns requirements, architecture, payments, infra and deploy.</span>
-              </motion.li>
-              <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
-                <span className="text-sm"><span className="font-medium text-ink">Transmission Company of Nigeria — IT Support Intern</span> <span className="text-muted">· 2024</span></span>
-                <span className="text-muted text-xs block mt-1 leading-relaxed">95% first-contact resolution across hardware, software and connectivity tickets. Provisioned desktops/laptops end-to-end, managed onboarding/offboarding and compliance checks, authored internal docs to unblock non-technical users.</span>
-              </motion.li>
-              <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
-                <span className="text-sm"><span className="font-medium text-ink">Abuja Electricity Distribution Company — Data Analyst Intern</span> <span className="text-muted">· 2020–2021</span></span>
-                <span className="text-muted text-xs block mt-1 leading-relaxed">Analysed operational datasets and built interactive Excel dashboards with pivot tables and charts — turning raw meter and billing data into decisions for non-technical stakeholders.</span>
-              </motion.li>
-            </motion.ul>
-          </motion.div>
+          <div>
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: '-80px' }}
+              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } } }}
+            >
+              <p className="mono-label text-muted mb-4">Experience</p>
+              <motion.ul variants={{ hidden: {}, show: { transition: { staggerChildren: 0.07 } } }} className="divide-y divide-border border-y border-border mb-8">
+                <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
+                  <span className="text-sm"><span className="font-medium text-ink">Acacia — IT Support</span> <span className="text-muted">· 2025–2026</span></span>
+                  <span className="text-muted text-xs block mt-1 leading-relaxed">Enterprise IT support covering device provisioning and lifecycle management, endpoint hardening, user account provisioning and access control, hardware inventory and asset tracking, plus internal knowledge-base documentation. First-contact resolution focus with clear hand-offs to engineering when needed.</span>
+                </motion.li>
+                <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
+                  <span className="text-sm"><span className="font-medium text-ink">Freelance — Full-stack & AI</span> <span className="text-muted">— 2023–2026</span></span>
+                  <span className="text-muted text-xs block mt-1 leading-relaxed">Independent builds for startups and SMEs worldwide — e-commerce (ArtsyBrands, Joetheboy), corporate platforms (HybridGroups), and AI fitness products (MuscleAtlas). Owns requirements, architecture, payments, infra and deploy.</span>
+                </motion.li>
+                <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
+                  <span className="text-sm"><span className="font-medium text-ink">Transmission Company of Nigeria — IT Support Intern</span> <span className="text-muted">· 2024</span></span>
+                  <span className="text-muted text-xs block mt-1 leading-relaxed">95% first-contact resolution across hardware, software and connectivity tickets. Provisioned desktops/laptops end-to-end, managed onboarding/offboarding and compliance checks, authored internal docs to unblock non-technical users.</span>
+                </motion.li>
+                <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
+                  <span className="text-sm"><span className="font-medium text-ink">Abuja Electricity Distribution Company — Data Analyst Intern</span> <span className="text-muted">· 2020–2021</span></span>
+                  <span className="text-muted text-xs block mt-1 leading-relaxed">Analysed operational datasets and built interactive Excel dashboards with pivot tables and charts — turning raw meter and billing data into decisions for non-technical stakeholders.</span>
+                </motion.li>
+              </motion.ul>
+            </motion.div>
 
             <p className="mono-label text-muted mb-3">Toolkit</p>
             <p className="font-mono text-xs leading-loose text-muted">
