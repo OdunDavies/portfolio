@@ -34,14 +34,6 @@ const allProjects: Project[] = [
   },
   {
     year: '2026',
-    title: 'Atlas',
-    desc: 'Fitness dashboard — Strength Programme, workout logging, library and chat. Companion to MuscleAtlas; strength-focused PWA.',
-    stack: ['Next.js', 'Supabase', 'Tailwind'],
-    href: 'https://musatlas.vercel.app',
-    status: 'LIVE',
-  },
-  {
-    year: '2026',
     title: 'HybridGroups',
     desc: 'Corporate platform for Hybrid Groups Nigeria — Renewable Energy, Agriculture & Food, Water & Beverages. Diversified conglomerate site with sectors, impact and leadership.',
     stack: ['Next.js', 'Tailwind', 'Vercel'],
@@ -110,14 +102,22 @@ export default function Work() {
           )}
         </div>
 
-        <div className="border-y border-border divide-y divide-border">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-80px' }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } } }}
+          className="border-y border-border divide-y divide-border"
+        >
           {projects.map((p) => (
-            <a
+            <motion.a
               key={p.title}
               href={p.href ?? undefined}
               target={p.href ? '_blank' : undefined}
               rel={p.href ? 'noopener noreferrer' : undefined}
-              className={`group flex gap-4 md:gap-6 py-6 px-0 md:px-4 hover:bg-panel transition-colors duration-200 ${p.href ? '' : 'pointer-events-none'}`}
+              variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } } }}
+              whileHover={{ x: 4, backgroundColor: 'var(--color-surface-raised)' }}
+              className={`group flex gap-4 md:gap-6 py-6 px-0 md:px-4 transition-colors duration-200 ${p.href ? '' : 'pointer-events-none'}`}
             >
               <span className="mono-label text-muted shrink-0 w-10 pt-1">{p.year}</span>
 
@@ -143,16 +143,10 @@ export default function Work() {
                   ))}
                 </span>
               </span>
-            </a>
+            </motion.a>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mt-8 border border-border p-6 bg-panel">
-          <p className="mono-label text-muted mb-2">Freelancing — 2023–2026</p>
-          <p className="text-muted text-sm leading-relaxed">
-            Independent full-stack and AI integration work for clients and founders — taking problems from requirements to deployed products without handoffs. Selected shipped work above; ongoing.
-          </p>
-        </div>
       </div>
     </motion.section>
   )

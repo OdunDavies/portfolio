@@ -7,7 +7,6 @@ import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
 import WayfindingNav from '@/components/WayfindingNav'
 import ScrollToTop from '@/components/ScrollToTop'
-import ChatWidget from '@/components/ChatWidget'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://odunayo.xyz'
 
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
   },
   description:
     'Forward-Deployed Engineer. I embed with the problem, build the software, and get it into production. Full-stack, AI integration, and infrastructure — from requirements to deployed product without a handoff.',
-  keywords: ['forward-deployed engineer', 'software engineer', 'full-stack developer', 'AI integration', 'infrastructure', 'Nigeria', 'Odunayo Idowu'],
+  keywords: ['forward-deployed engineer', 'software engineer', 'full-stack developer', 'AI integration', 'infrastructure', 'remote', 'global', 'Odunayo Idowu'],
   authors: [{ name: 'Odunayo Idowu', url: BASE_URL }],
   creator: 'Odunayo Idowu',
   openGraph: {
@@ -90,7 +89,6 @@ export default function RootLayout({
         <ScrollToTop />
         <main id="main-content">{children}</main>
         <Footer />
-        <ChatWidget />
       </body>
     </html>
   )
