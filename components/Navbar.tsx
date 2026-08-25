@@ -5,9 +5,7 @@ import Link from 'next/link'
 
 const navLinks = [
   { label: 'Work', href: '#work' },
-  { label: 'Process', href: '#process' },
   { label: 'About', href: '#about' },
-  { label: 'AI Chat', href: '#chat' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -27,26 +25,23 @@ export default function Navbar() {
       }`}
       role="banner"
     >
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo — initials in monospace */}
+      <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
         <Link
           href="/"
           aria-label="Odunayo Idowu — home"
-          className="font-mono text-base font-bold text-ink tracking-tight hover:text-accent transition-colors duration-200"
+          className="font-mono text-sm font-bold tracking-widest text-ink hover:text-accent transition-colors duration-200"
         >
           OI
         </Link>
-
-        {/* Nav links */}
         <nav aria-label="Primary navigation">
-          <ul className="flex items-center gap-7" role="list">
+          <ul className="flex items-center gap-6" role="list">
             {navLinks.map(({ label, href }) => (
               <li key={label}>
                 <a
                   href={href}
-                  className="text-sm text-muted hover:text-ink transition-colors duration-200 hover:underline underline-offset-4"
+                  className="font-mono text-xs tracking-widest text-muted hover:text-ink transition-colors duration-200"
                 >
-                  {label}
+                  {label.toUpperCase()}
                 </a>
               </li>
             ))}

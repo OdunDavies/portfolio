@@ -1,84 +1,48 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import NumberedHeading from '@/components/ui/NumberedHeading'
-
-const competencies = [
-  'IT Support & Helpdesk',
-  'Web Development',
-  'AI Integration',
-  'Cloud & VPS Infrastructure',
-  'Shopify Development',
-  'React / Next.js',
-  'Linux & VPS Administration',
-  'Automation & Scripting',
-  'Device Provisioning',
-  'User Account Management',
-  'IT Documentation',
-  'API Integration',
-]
-
 export default function About() {
   return (
-    <motion.section
-      id="about"
-      aria-label="About"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="py-24 px-6 border-t border-border"
-    >
+    <section id="about" aria-label="About" className="px-6 py-24 border-b border-border">
       <div className="max-w-5xl mx-auto">
-        <NumberedHeading number="05" label="Background" title="About Me" />
+        <h2 className="font-mono text-xs tracking-[0.2em] text-muted mb-10">ABOUT</h2>
 
         <div className="max-w-2xl">
-          <p className="text-base text-muted leading-relaxed mb-6">
-            My curiosity about how things work started on the hardware side before
-            moving into code. That curiosity found a deliberate path through IT
-            support, web development, and AI integration, and it keeps pulling me
-            toward problems that sit at the intersection of infrastructure and
-            interface.
-          </p>
-          <p className="text-base text-muted leading-relaxed mb-6">
-            I&apos;m an IT Support Technician and freelance technologist with hands-on
-            experience across helpdesk support, web application development, and AI
-            integration. I deliver a 95% first-contact resolution rate in enterprise
-            environments while simultaneously building and shipping production-grade
-            web apps, AI-powered tools, and digital products for Nigerian businesses.
-          </p>
-          <p className="text-base text-muted leading-relaxed mb-10">
-            I&apos;m self-directed, fast-learning, and equally comfortable on the terminal
-            or the ticket queue.
+          <p className="text-base text-ink leading-relaxed mb-10">
+            Software engineer with a background in IT support, data analysis, and
+            infrastructure — now building full-stack products and AI integrations for
+            clients and founders across Nigeria.
           </p>
 
           <div className="mb-10">
-            <p className="font-mono text-xs text-accent tracking-wide mb-4 uppercase">
-              Core Competencies
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {competencies.map((c) => (
-                <span
-                  key={c}
-                  className="border border-border text-xs px-2.5 py-1 text-muted tracking-wide"
-                >
-                  {c}
+            <p className="font-mono text-xs tracking-widest text-muted uppercase mb-4">Experience</p>
+            <ul className="space-y-3">
+              <li className="flex gap-3 text-sm">
+                <span className="text-muted shrink-0">—</span>
+                <span className="text-muted">
+                  <span className="text-ink font-medium">IT Support, Transmission Company of Nigeria</span> — 95% first-contact resolution — 2024
                 </span>
-              ))}
-            </div>
+              </li>
+              <li className="flex gap-3 text-sm">
+                <span className="text-muted shrink-0">—</span>
+                <span className="text-muted">
+                  <span className="text-ink font-medium">Data Analyst, Abuja Electricity Distribution Company</span> — operational dashboards & reporting — 2020–21
+                </span>
+              </li>
+            </ul>
           </div>
 
-          <div>
-            <p className="font-mono text-xs text-accent tracking-wide mb-3 uppercase">
-              Education
+          <div className="mb-10">
+            <p className="font-mono text-xs tracking-widest text-muted uppercase mb-4">Toolkit</p>
+            <p className="font-mono text-xs leading-loose text-muted">
+              Next.js · React · Tailwind · Supabase · Paystack · Cloudflare · Vercel · Hetzner/PM2/systemd · Claude API · Gemini API · n8n
             </p>
-            <p className="text-sm text-ink font-medium">
-              B.Sc. Information and Communication Science
-            </p>
-            <p className="text-sm text-muted">University of Ilorin, Kwara State &middot; Feb 2018 – Oct 2023</p>
           </div>
+
+          <p className="text-sm text-muted leading-relaxed border-t border-border pt-6">
+            Infrastructure note: self-hosted AI agent on Hetzner, Gemini API + Telegram — Linux/PM2/systemd.
+          </p>
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

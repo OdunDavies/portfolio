@@ -1,89 +1,61 @@
 'use client'
 
-import { motion, type Variants } from 'framer-motion'
-import NumberedHeading from '@/components/ui/NumberedHeading'
-import { projects } from '@/lib/projects'
+import { motion } from 'framer-motion'
 
-const container: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
-}
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
-}
+const projects = [
+  {
+    title: 'ArtsyBrands',
+    kicker: 'Live e-commerce platform → artsybrandss.com',
+    desc: 'Full-stack jewelry storefront: Next.js, Supabase, Cloudinary, Paystack, Resend. Custom JWT admin auth, Paystack webhooks, live in production.',
+    href: 'https://artsybrandss.com',
+    cta: 'Visit live site →',
+  },
+  {
+    title: 'MuscleAtlas',
+    kicker: 'AI fitness platform → muscleatlas.site',
+    desc: 'AI-powered workout app for Nigerian gym-goers, built around a chat-first AI coach that reads logged sets and proactively adjusts the plan.',
+    href: 'https://muscleatlas.site',
+    cta: 'Visit live site →',
+  },
+  {
+    title: 'SarkiMota Group',
+    kicker: 'Speculative pitch → interview',
+    desc: 'Built an unsolicited pitch site and content strategy playbook for a Nigerian luxury holding company. Led to a direct interview invitation from the chairman.',
+    href: null,
+    cta: null,
+  },
+]
 
 export default function Work() {
   return (
-    <motion.section
-      id="work"
-      aria-label="Selected Work"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="py-24 px-6 border-t border-border"
-    >
+    <section id="work" aria-label="Work" className="px-6 py-24 border-b border-border">
       <div className="max-w-5xl mx-auto">
-        <NumberedHeading number="01" label="Recently" title="Selected Projects" />
+        <h2 className="font-mono text-xs tracking-[0.2em] text-muted mb-10">WORK</h2>
 
-        <p className="text-xs text-muted font-mono tracking-wide -mt-8 mb-8">
-          Click a project name to view it live &rarr;
-        </p>
-
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="flex flex-col"
-        >
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.slug}
-              variants={item}
-              className="group border-t border-border py-6 first:border-t-0"
-            >
-              <div className="flex items-start gap-6">
-                <span className="font-mono text-xs text-muted mt-1 w-6 shrink-0">
-                  {(i + 1).toString().padStart(2, '0')}
-                </span>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-1 flex-wrap">
-                    <h3 className="text-lg font-medium text-ink">
-                      {project.href !== '#'
-                        ? <a href={project.href} target="_blank" rel="noopener noreferrer" className="reticule-link hover:text-accent transition-colors duration-200">{project.title}<span className="reticule-corners"><span /><span /><span /><span /></span></a>
-                        : project.title
-                      }
-                    </h3>
-                    {project.status === 'development' && (
-                      <span className="text-[10px] uppercase tracking-widest border border-amber-600/30 text-amber-700 px-2 py-0.5 leading-none">
-                        In Dev
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-sm text-muted leading-relaxed mb-2">
-                    {project.problem}
-                  </p>
-                  <p className="text-sm font-medium text-accent mb-2">{project.outcome}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[11px] text-muted font-mono tracking-wide"
-                      >
-                        {tag}
-                        <span className="text-border mx-1">/</span>
-                      </span>
-                    ))}
-                  </div>
-                </div>
+        <div className="flex flex-col divide-y divide-border border-y border-border">
+          {projects.map((p) => (
+            <div key={p.title} className="py-8 grid md:grid-cols-[200px_1fr] gap-4">
+              <div>
+                <h3 className="text-base font-medium text-ink">{p.title}</h3>
+                <p className="font-mono text-xs text-muted mt-1">{p.kicker}</p>
               </div>
-            </motion.div>
+              <div>
+                <p className="text-sm text-muted leading-relaxed mb-3">{p.desc}</p>
+                {p.href && (
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs tracking-widest text-ink hover:text-accent transition-colors"
+                  >
+                    {p.cta}
+                  </a>
+                )}
+              </div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

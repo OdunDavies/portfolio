@@ -1,17 +1,13 @@
 import type { Metadata } from 'next'
 import Hero from '@/components/sections/Hero'
 import Work from '@/components/sections/Work'
-import Experience from '@/components/sections/Experience'
-import Process from '@/components/sections/Process'
-import Clients from '@/components/sections/Clients'
 import About from '@/components/sections/About'
-import Tools from '@/components/sections/Tools'
 import Contact from '@/components/sections/Contact'
 
 export const metadata: Metadata = {
-  title: 'Odunayo Idowu — IT Support & Web Developer',
+  title: 'Odunayo Idowu — Forward-Deployed Engineer — Software · AI Integration · Infrastructure',
   description:
-    'IT Support Technician and freelance web developer. 95% first-contact resolution rate. Building and shipping production-grade web apps and AI-powered tools.',
+    'Forward-Deployed Engineer. I embed with the problem, build the software, and get it into production. Full-stack, AI and infrastructure without handoffs.',
 }
 
 export default function HomePage() {
@@ -19,11 +15,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Work />
-      <Experience />
-      <Process />
-      <Clients />
       <About />
-      <Tools />
       <Contact />
     </>
   )

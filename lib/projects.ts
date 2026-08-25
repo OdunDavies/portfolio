@@ -5,106 +5,46 @@ export const projects: Project[] = [
     slug: 'artsybrandss',
     title: 'ArtsyBrands',
     problem:
-      'The client needed a complete e-commerce web infrastructure — domain setup, email deliverability, SSL, and a storefront that matched their creative brand identity. Built and deployed with Next.js, React Email transactional templates, Cloudflare DNS, and SSL management.',
-    outcome: 'Production-ready storefront with proper domain routing, transactional email, and a distinctive visual identity.',
-    tags: ['Next.js', 'TypeScript', 'Resend', 'Cloudflare', 'React Email'],
+      'Live e-commerce platform. Full-stack jewelry storefront: Next.js, Supabase, Cloudinary, Paystack, Resend. Custom JWT admin auth, Paystack webhooks, live in production.',
+    outcome: 'Live at artsybrandss.com — production storefront with domain, payments and transactional email working as one system.',
+    tags: ['Next.js', 'Supabase', 'Cloudinary', 'Paystack', 'Resend', 'Cloudflare'],
     href: 'https://artsybrandss.com',
     imageSrc: '/images/artsybrandss.jpg',
-    imageAlt: 'ArtsyBrands e-commerce platform for jewellery and creative products',
-    status: 'shipped',
-  },
-  {
-    slug: 'joseph-ali',
-    title: 'Joseph Ali — Videographer Portfolio',
-    problem:
-      'A videographer needed a professional portfolio site to showcase their work and make it easy for clients to reach out and book.',
-    outcome: 'Clean, fast portfolio that puts the work front and centre.',
-    tags: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Netlify'],
-    href: 'https://josephali.netlify.app',
-    imageSrc: '/images/josephali.jpg',
-    imageAlt: 'Joseph Ali videographer portfolio website',
-    status: 'shipped',
-  },
-  {
-    slug: 'openclaw',
-    title: 'OpenClaw — AI Agent',
-    problem:
-      'Needed a self-hosted AI agent on a VPS with real-time Telegram interaction, without relying on third-party hosted solutions.',
-    outcome: 'Deployed and configured OpenClaw on a Hetzner VPS with Gemini API and Telegram interface — full Linux server administration.',
-    tags: ['Hetzner VPS', 'Gemini API', 'Linux/Ubuntu', 'PM2', 'systemd', 'Telegram'],
-    href: '#',
-    imageSrc: '/images/openclaw.jpg',
-    imageAlt: 'OpenClaw self-hosted AI agent on Hetzner VPS',
+    imageAlt: 'ArtsyBrands e-commerce platform',
     status: 'shipped',
   },
   {
     slug: 'muscleatlas',
     title: 'MuscleAtlas',
     problem:
-      'Fitness enthusiasts need a platform to log workouts, track muscle progress by targeting specific muscle groups, and access structured training content.',
-    outcome: 'In development — interactive muscle-group targeting and workout tracking web application.',
-    tags: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+      'AI-powered workout app for Nigerian gym-goers, built around a chat-first AI coach that reads logged sets and proactively adjusts the plan.',
+    outcome: 'Live at muscleatlas.site — interactive muscle-group targeting and workout tracking with AI coach.',
+    tags: ['Next.js', 'Supabase', 'Tailwind CSS', 'Gemini API'],
     href: 'https://muscleatlas.site',
     imageSrc: '/images/muscleatlas.jpg',
-    imageAlt: 'MuscleAtlas fitness platform — workout tracking and training content',
+    imageAlt: 'MuscleAtlas fitness platform',
     status: 'shipped',
   },
 ]
 
 export const processSteps: ProcessStepData[] = [
-  {
-    number: '01',
-    title: 'Discover',
-    description:
-      'I start with a conversation — understanding your business, your audience, and the outcome you actually need. Most of the time, the right solution is simpler than you expect.',
-  },
-  {
-    number: '02',
-    title: 'Design',
-    description:
-      'I turn what I\'ve learned into wireframes, architecture decisions, and a clear scope. You see the plan and sign off before a single line of code is written.',
-  },
-  {
-    number: '03',
-    title: 'Build',
-    description:
-      'Focused development sprints with regular check-ins. No disappearing for weeks. You see progress as it happens and can course-correct early.',
-  },
-  {
-    number: '04',
-    title: 'Deploy',
-    description:
-      'I handle the full launch — domain setup, hosting configuration, SSL, email deliverability, and everything needed to go live without hiccups.',
-  },
-  {
-    number: '05',
-    title: 'Iterate',
-    description:
-      'After launch, I stay available. Real users uncover things we couldn\'t predict. I refine, improve, and make sure what we built actually works in the wild.',
-  },
+  { number: '01', title: 'Understand', description: 'Requirements, workflow, constraints and desired outcome.' },
+  { number: '02', title: 'Build', description: 'Solution in focused iterations — frontend, backend, AI, APIs.' },
+  { number: '03', title: 'Deploy', description: 'Hosting, DNS, SSL, env, email, VPS — to production.' },
+  { number: '04', title: 'Iterate', description: 'Troubleshoot, collect feedback and improve after launch.' },
 ]
 
 export const experience: Experience[] = [
   {
     role: 'IT Support Personnel (Intern)',
     company: 'Transmission Company of Nigeria',
-    period: 'Feb 2024 – Oct 2024',
-    bullets: [
-      'Provisioned and configured desktops and laptops end-to-end — OS setup, software installation, and user account configuration — delivering production-ready devices to incoming staff.',
-      'Maintained a 95% first-contact resolution rate across hardware, software, and connectivity tickets, minimising staff downtime.',
-      'Diagnosed and resolved printer and workstation issues in collaboration with senior IT staff; maintained accurate resolution logs.',
-      'Authored and updated internal IT documentation and knowledge-base articles, improving self-service resolution rates for staff.',
-      'Managed user account provisioning, device compliance checks, and access management workflows during onboarding/offboarding cycles.',
-      'Tracked hardware inventory using Microsoft Excel, generating reports and managing asset records for the IT team.',
-    ],
+    period: '2024',
+    bullets: ['95% first-contact resolution across hardware, software and connectivity tickets.'],
   },
   {
     role: 'Data Analyst Intern',
     company: 'Abuja Electricity Distribution Company',
-    period: 'Aug 2020 – Jan 2021',
-    bullets: [
-      'Analysed operational datasets and produced actionable reports using Microsoft Excel pivot tables and charts for decision-makers.',
-      'Built and maintained interactive Excel dashboards visualising key operational metrics for non-technical stakeholders.',
-    ],
+    period: '2020–21',
+    bullets: ['Operational dashboards & reporting with Excel pivot tables and charts.'],
   },
 ]

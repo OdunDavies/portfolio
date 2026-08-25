@@ -14,36 +14,36 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://odunayoidowu.verce
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'Odunayo Idowu — IT Support & Web Developer',
+    default: 'Odunayo Idowu — Forward-Deployed Engineer — Software · AI Integration · Infrastructure',
     template: '%s | Odunayo Idowu',
   },
   description:
-    'IT Support Technician and freelance web developer. 95% first-contact resolution rate. Building and shipping production-grade web apps and AI-powered tools for Nigerian businesses.',
-  keywords: ['IT support technician', 'web developer', 'Next.js developer', 'freelance technologist', 'Abuja'],
+    'Forward-Deployed Engineer. I embed with the problem, build the software, and get it into production. Full-stack, AI integration, and infrastructure — from requirements to deployed product without a handoff.',
+  keywords: ['forward-deployed engineer', 'software engineer', 'full-stack developer', 'AI integration', 'infrastructure', 'Nigeria', 'Odunayo Idowu'],
   authors: [{ name: 'Odunayo Idowu', url: BASE_URL }],
   creator: 'Odunayo Idowu',
   openGraph: {
     type: 'website',
     locale: 'en_GB',
     url: BASE_URL,
-    siteName: 'Odunayo Idowu — IT Support & Web Developer',
-    title: 'Odunayo Idowu — IT Support & Web Developer',
+    siteName: 'Odunayo Idowu — Forward-Deployed Engineer — Software · AI Integration · Infrastructure',
+    title: 'Odunayo Idowu — Forward-Deployed Engineer — Software · AI Integration · Infrastructure',
     description:
-      'IT Support Technician and freelance technologist. Helpdesk support, web apps, AI integration, and VPS infrastructure.',
+      'I embed with the problem, build the software, and get it into production. Full-stack builds, AI integration, and infrastructure.',
     images: [
       {
         url: '/odunayo.jpg',
         width: 1200,
         height: 630,
-        alt: 'Odunayo Idowu — IT Support & Web Developer',
+        alt: 'Odunayo Idowu — Forward-Deployed Engineer — Software · AI Integration · Infrastructure',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Odunayo Idowu — IT Support & Web Developer',
+    title: 'Odunayo Idowu — Forward-Deployed Engineer — Software · AI Integration · Infrastructure',
     description:
-      'IT Support Technician and freelance technologist. Helpdesk support, web apps, AI integration, and VPS infrastructure.',
+      'I embed with the problem, build the software, and get it into production. Full-stack, AI and infrastructure.',
     images: ['/odunayo.jpg'],
   },
   robots: {
@@ -58,9 +58,9 @@ const personSchema = {
   '@type': 'Person',
   name: 'Odunayo Idowu',
   url: BASE_URL,
-  jobTitle: 'IT Support Technician & Freelance Web Developer',
+  jobTitle: 'Forward-Deployed Engineer — Software · AI Integration · Infrastructure',
   description:
-    'IT Support Technician and freelance technologist with hands-on experience across helpdesk support, web application development, and AI integration.',
+    'Forward-Deployed Engineer — Software · AI Integration · Infrastructure — embedding with problems to build and ship production software without handoffs.',
   sameAs: [
     'https://www.linkedin.com/in/odunayo-idowu-a114ab217/',
     'https://github.com/OdunDavies',
