@@ -29,10 +29,25 @@ export default function LoadingScreen() {
               <span className="pulse-dot" />
               LOADING
             </span>
-            <span className="font-display font-bold tracking-tight text-ink" style={{ fontSize: '22px', letterSpacing: '-0.02em' }}>
-              Odunayo Idowu
+            <span className="block overflow-hidden">
+              <motion.span
+                initial={{ x: '-100%' }}
+                animate={{ x: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.3 } }}
+                className="block font-display font-bold tracking-tight text-ink"
+                style={{ fontSize: '22px', letterSpacing: '-0.02em' }}
+              >
+                Odunayo Idowu
+              </motion.span>
             </span>
-            <span className="font-mono text-xs tracking-[0.2em] text-muted">Forward-Deployed Engineer</span>
+            <span className="block overflow-hidden">
+              <motion.span
+                initial={{ x: '-100%' }}
+                animate={{ x: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.5 } }}
+                className="block font-mono text-xs tracking-[0.2em] text-muted"
+              >
+                Forward-Deployed Engineer
+              </motion.span>
+            </span>
             <span className="h-px w-32 bg-border overflow-hidden">
               <motion.span
                 initial={{ x: '-100%' }}
