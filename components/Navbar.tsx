@@ -29,24 +29,29 @@ export default function Navbar() {
         <Link
           href="/"
           aria-label="Odunayo Idowu — home"
-          className="font-mono text-sm font-bold tracking-widest text-ink hover:text-accent transition-colors duration-200"
+          className="font-mono text-xs tracking-widest text-ink hover:opacity-70 transition-opacity"
         >
-          OI
+          ODUNAYO
         </Link>
-        <nav aria-label="Primary navigation">
-          <ul className="flex items-center gap-6" role="list">
-            {navLinks.map(({ label, href }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  className="font-mono text-xs tracking-widest text-muted hover:text-ink transition-colors duration-200"
-                >
-                  {label.toUpperCase()}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+
+        <div className="flex items-center gap-8">
+          <nav aria-label="Primary navigation">
+            <ul className="flex items-center gap-6" role="list">
+              {navLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="font-mono text-xs tracking-widest text-muted hover:text-ink transition-colors">
+                    {label.toUpperCase()}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <span className="hidden md:inline-flex items-center gap-2 border border-border px-3 py-1 text-xs font-mono tracking-widest bg-panel">
+            <span className="pulse-dot" aria-hidden="true" />
+            AVAILABLE FOR WORK
+          </span>
+        </div>
       </div>
     </header>
   )

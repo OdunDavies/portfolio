@@ -1,57 +1,128 @@
 'use client'
 
-import { motion, type Variants } from 'framer-motion'
-import CTAButton from '@/components/ui/CTAButton'
-
-const container: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1, delayChildren: 0.08 } },
-}
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
-}
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section id="hero" aria-label="Introduction" className="px-6 py-24 md:py-32 border-b border-border">
+    <section id="hero" aria-label="Introduction" className="px-6 py-12 md:py-20 border-b border-border overflow-hidden">
       <div className="max-w-5xl mx-auto">
-        <motion.div variants={container} initial="hidden" animate="show" className="max-w-3xl">
-          <motion.p variants={item} className="font-mono text-xs tracking-[0.2em] text-accent uppercase mb-6">
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.13, delayChildren: 0.1 } } }}
+          className="max-w-3xl"
+        >
+          <motion.p
+            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+            className="mono-label text-muted mb-6"
+          >
             Forward-Deployed Engineer
           </motion.p>
 
-          <motion.h1
-            variants={item}
-            className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-ink leading-[1.1] mb-6"
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+            className="flex items-start gap-4 mb-6"
           >
-            I embed with the problem, build the software, and get it into production.
-          </motion.h1>
+            <div className="flex-1">
+              <h1 className="font-display font-bold tracking-tight text-ink leading-[0.95] text-[clamp(36px,6vw,68px)]" style={{ letterSpacing: '-0.015em' }}>
+                <span className="block overflow-hidden">
+                  <motion.span
+                    variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
+                    className="block"
+                  >
+                    I embed with the
+                  </motion.span>
+                </span>
+                <span className="block overflow-hidden">
+                  <motion.span
+                    variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.13 } } }}
+                    className="block"
+                  >
+                    problem, build the
+                  </motion.span>
+                </span>
+                <span className="block overflow-hidden">
+                  <motion.span
+                    variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.26 } } }}
+                    className="block"
+                  >
+                    software, and get it
+                  </motion.span>
+                </span>
+                <span className="block overflow-hidden">
+                  <motion.span
+                    variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.39 } } }}
+                    className="block"
+                  >
+                    into production.
+                  </motion.span>
+                </span>
+              </h1>
+            </div>
 
-          <motion.p variants={item} className="text-base md:text-lg text-muted leading-relaxed mb-8 max-w-2xl">
-            Full-stack builds, AI integration, and infrastructure — for teams that need
-            someone who can take a problem from requirements to a deployed, working
-            product without a handoff.
-          </motion.p>
-
-          <motion.div variants={item} className="flex items-center gap-2 font-mono text-xs tracking-widest text-muted mb-10 flex-wrap">
-            <span>Understand</span>
-            <span className="text-border">→</span>
-            <span>Build</span>
-            <span className="text-border">→</span>
-            <span>Deploy</span>
-            <span className="text-border">→</span>
-            <span>Iterate</span>
+            <motion.div
+              variants={{ hidden: { opacity: 0, scale: 0.95 }, show: { opacity: 1, scale: 1, transition: { duration: 0.6, delay: 0.5 } } }}
+              className="hidden md:block shrink-0"
+            >
+              <Image
+                src="/odunayo.jpg"
+                alt="Odunayo Idowu"
+                width={96}
+                height={96}
+                className="w-24 h-24 object-cover grayscale border border-border"
+                priority
+              />
+            </motion.div>
           </motion.div>
 
-          <motion.div variants={item} className="flex flex-wrap gap-3">
-            <CTAButton variant="filled" href="#work">
+          {/* Mobile photo + stat */}
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+            className="flex md:hidden items-center gap-4 mb-6"
+          >
+            <Image src="/odunayo.jpg" alt="Odunayo Idowu" width={64} height={64} className="w-16 h-16 object-cover grayscale border border-border" />
+            <p className="mono-label text-muted">3 live products in production</p>
+          </motion.div>
+
+          <motion.p
+            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+            className="hidden md:block mono-label text-muted mb-4"
+          >
+            3 live products in production
+          </motion.p>
+
+          <motion.p
+            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+            className="text-muted leading-relaxed mb-8 max-w-2xl"
+            style={{ fontSize: '17.5px', lineHeight: '1.55' }}
+          >
+            Full-stack builds, AI integration, and infrastructure — for teams that need someone who can take a problem from requirements to a deployed, working product without a handoff.
+          </motion.p>
+
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+            className="flex flex-wrap gap-3 mb-10"
+          >
+            <a href="#work" className="inline-flex items-center bg-ink text-background px-6 py-3 font-mono text-xs tracking-widest uppercase hover:opacity-90 transition-opacity">
               View Work
-            </CTAButton>
-            <CTAButton variant="ghost" href="#contact">
+            </a>
+            <a href="#contact" className="inline-flex items-center border border-border-strong px-6 py-3 font-mono text-xs tracking-widest uppercase bg-background hover:bg-panel transition-colors">
               Let&apos;s Talk
-            </CTAButton>
+            </a>
+          </motion.div>
+
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+            className="flex items-center gap-2 font-mono text-xs tracking-widest text-muted flex-wrap border-t border-border pt-6"
+          >
+            <span>Understand</span>
+            <span className="text-border-strong">→</span>
+            <span>Build</span>
+            <span className="text-border-strong">→</span>
+            <span>Deploy</span>
+            <span className="text-border-strong">→</span>
+            <span>Iterate</span>
           </motion.div>
         </motion.div>
       </div>
