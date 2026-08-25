@@ -21,7 +21,7 @@ export default function Hero() {
         >
           <motion.p
             variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="mono-label text-muted mb-6"
+            className="font-mono text-xs font-medium tracking-[0.14em] uppercase text-muted mb-6"
           >
             Forward-Deployed Engineer
           </motion.p>
@@ -30,7 +30,7 @@ export default function Hero() {
             variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
             className="mb-6"
           >
-            <h1 className="font-display font-bold tracking-tight text-ink leading-[0.95] text-[clamp(36px,6vw,68px)]" style={{ letterSpacing: '-0.015em' }}>
+            <h1 className="font-sans font-semibold tracking-tight text-ink leading-[1.05] text-[clamp(32px,5vw,52px)]" style={{ letterSpacing: '-0.015em' }}>
               <span className="block overflow-hidden">
                 <motion.span
                   variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
@@ -68,22 +68,21 @@ export default function Hero() {
 
           <motion.p
             variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="mono-label text-muted mb-3"
+            className="font-mono text-xs font-medium tracking-[0.14em] uppercase text-muted mb-4"
           >
             3 live products in production
           </motion.p>
 
           <motion.p
             variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="text-muted leading-relaxed mb-4 max-w-2xl text-sm"
+            className="font-sans text-[15px] font-medium leading-relaxed text-muted mb-4 max-w-2xl"
           >
             I work with businesses needing more than a brochure site, creatives like videographers and designers who need their work center stage, SMEs and startups moving beyond social to owned infrastructure, and organizations needing hands-on support to turn fuzzy requirements into shipped software.
           </motion.p>
 
           <motion.p
             variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="text-muted leading-relaxed mb-8 max-w-2xl"
-            style={{ fontSize: '17.5px', lineHeight: '1.55' }}
+            className="font-sans text-[15px] font-medium leading-relaxed text-muted mb-8 max-w-2xl"
           >
             Full-stack builds, AI integration, and infrastructure — for teams that need someone who can take a problem from requirements to a deployed, working product without a handoff.
           </motion.p>
