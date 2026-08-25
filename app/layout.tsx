@@ -10,7 +10,7 @@ import ChatWidget from '@/components/ChatWidget'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['700', '800'],
+  weight: ['700'],
   variable: '--font-space-grotesk',
   display: 'swap',
 })
