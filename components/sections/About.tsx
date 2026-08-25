@@ -1,6 +1,18 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import {
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
+  SiSupabase,
+  SiCloudflare,
+  SiVercel,
+  SiHetzner,
+  SiAnthropic,
+  SiGooglegemini,
+  SiN8N,
+} from 'react-icons/si'
 
 export default function About() {
   return (
@@ -81,9 +93,30 @@ export default function About() {
             </motion.div>
 
             <p className="mono-label text-muted mb-3">Toolkit</p>
-            <p className="font-mono text-xs leading-loose text-muted">
-              Next.js · React · Tailwind · Supabase · Paystack · Cloudflare · Vercel · Hetzner/PM2/systemd · Claude API · Gemini API · n8n
-            </p>
+            <div className="grid grid-cols-4 md:grid-cols-6 gap-4">
+              {[
+                { Icon: SiNextdotjs, label: 'Next.js' },
+                { Icon: SiReact, label: 'React' },
+                { Icon: SiTailwindcss, label: 'Tailwind' },
+                { Icon: SiSupabase, label: 'Supabase' },
+                { Icon: null, label: 'Paystack', fallback: '₦' },
+                { Icon: SiCloudflare, label: 'Cloudflare' },
+                { Icon: SiVercel, label: 'Vercel' },
+                { Icon: SiHetzner, label: 'Hetzner' },
+                { Icon: SiAnthropic, label: 'Claude' },
+                { Icon: SiGooglegemini, label: 'Gemini' },
+                { Icon: SiN8N, label: 'n8n' },
+              ].map(({ Icon, label, fallback }) => (
+                <div key={label} className="flex flex-col items-center gap-1.5">
+                  <span className="w-9 h-9 rounded-full border border-border bg-panel flex items-center justify-center shrink-0">
+                    {Icon ? <Icon className="w-4 h-4 text-ink" /> : <span className="font-mono text-xs font-bold text-ink">{fallback}</span>}
+                  </span>
+                  <span className="mono-label text-muted text-center" style={{ fontSize: '9px', letterSpacing: '0.08em' }}>
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
