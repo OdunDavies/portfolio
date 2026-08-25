@@ -87,9 +87,9 @@ export default function Work() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="px-6 py-16 md:py-24 border-b border-border"
+      className="px-4 md:px-6 py-6 md:py-8"
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto border border-border bg-surface-raised p-6 md:p-10 shadow-sm">
         <div className="flex items-baseline justify-between mb-10">
           <h2 className="mono-label text-muted">WORK — DEPLOY LOG</h2>
           {allProjects.length > 3 && (

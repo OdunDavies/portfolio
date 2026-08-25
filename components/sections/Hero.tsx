@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section id="hero" aria-label="Introduction" className="px-6 py-12 md:py-20 border-b border-border overflow-hidden">
-      <div className="max-w-5xl mx-auto">
+    <section id="hero" aria-label="Introduction" className="px-4 md:px-6 py-6 md:py-8 overflow-hidden relative">
+      <div className="max-w-5xl mx-auto border border-border bg-surface-raised p-6 md:p-10 shadow-sm relative">
         <motion.div
           initial="hidden"
           animate="show"
@@ -98,8 +98,32 @@ export default function Hero() {
             <span className="text-border-strong">→</span>
             <span>Iterate</span>
           </motion.div>
+
+          <motion.div
+            variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { delay: 1.2, duration: 0.6 } } }}
+            className="mt-10 flex flex-col items-center md:items-start gap-2 md:hidden"
+          >
+            <span className="mono-label text-muted">Scroll</span>
+            <motion.span
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-px h-8 bg-border block"
+              aria-hidden="true"
+            />
+          </motion.div>
         </motion.div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.4, transition: { delay: 1, duration: 1 } }}
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.03]"
+        style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, #C4622D 1px, transparent 0)',
+          backgroundSize: '24px 24px',
+        }}
+        aria-hidden="true"
+      />
     </section>
   )
 }

@@ -15,8 +15,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 64px;
   background-color: #FFF8E7;
   color: #0F0F0F;
+}
+
+section {
+  scroll-margin-top: 64px;
 }
 
 * {

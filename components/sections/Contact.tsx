@@ -19,9 +19,9 @@ export default function Contact() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="px-6 py-16 md:py-24"
+      className="px-4 md:px-6 py-6 md:py-8"
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto border-2 border-ink bg-surface-raised p-1 shadow-md">
         <div className="contact-sweep bg-panel border border-border p-8 md:p-10">
           <h2 className="mono-label text-muted mb-4">CONTACT</h2>
           <p className="font-display font-bold text-ink leading-tight mb-6" style={{ fontSize: '28px', letterSpacing: '-0.015em' }}>

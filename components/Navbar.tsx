@@ -25,21 +25,21 @@ export default function Navbar() {
       }`}
       role="banner"
     >
-      <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 h-14 flex items-center justify-between gap-2">
         <Link
           href="/"
           aria-label="Odunayo Idowu — home"
-          className="font-mono text-xs tracking-widest text-ink hover:opacity-70 transition-opacity"
+          className="font-mono text-xs tracking-widest text-ink hover:opacity-70 transition-opacity shrink-0 py-2"
         >
           ODUNAYO
         </Link>
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 md:gap-8">
           <nav aria-label="Primary navigation">
-            <ul className="flex items-center gap-6" role="list">
+            <ul className="flex items-center gap-3 md:gap-6" role="list">
               {navLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <a href={href} className="font-mono text-xs tracking-widest text-muted hover:text-ink transition-colors">
+                  <a href={href} className="font-mono text-[11px] md:text-xs tracking-widest text-muted hover:text-ink transition-colors py-2 px-1 inline-block">
                     {label.toUpperCase()}
                   </a>
                 </li>
@@ -47,7 +47,7 @@ export default function Navbar() {
             </ul>
           </nav>
 
-          <span className="hidden md:inline-flex items-center gap-2 border border-border px-3 py-1 text-xs font-mono tracking-widest bg-panel">
+          <span className="hidden md:inline-flex items-center gap-2 border border-border px-3 py-1 text-xs font-mono tracking-widest bg-panel shrink-0">
             <span className="pulse-dot" aria-hidden="true" />
             AVAILABLE FOR WORK
           </span>

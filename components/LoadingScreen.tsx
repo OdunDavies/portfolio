@@ -7,7 +7,7 @@ export default function LoadingScreen() {
   const [show, setShow] = useState(true)
 
   useEffect(() => {
-    const t = setTimeout(() => setShow(false), 1200)
+    const t = setTimeout(() => setShow(false), 5000)
     return () => clearTimeout(t)
   }, [])
 
@@ -29,11 +29,14 @@ export default function LoadingScreen() {
               <span className="pulse-dot" />
               LOADING
             </span>
-            <span className="font-mono text-xs tracking-[0.2em] text-ink">ODUNAYO — FDE</span>
-            <span className="h-px w-24 bg-border overflow-hidden">
+            <span className="font-display font-bold tracking-tight text-ink" style={{ fontSize: '22px', letterSpacing: '-0.02em' }}>
+              Odunayo Idowu
+            </span>
+            <span className="font-mono text-xs tracking-[0.2em] text-muted">Forward-Deployed Engineer</span>
+            <span className="h-px w-32 bg-border overflow-hidden">
               <motion.span
                 initial={{ x: '-100%' }}
-                animate={{ x: '0%', transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } }}
+                animate={{ x: '0%', transition: { duration: 4.5, ease: [0.22, 1, 0.36, 1] } }}
                 className="block h-full w-full bg-accent"
               />
             </span>
