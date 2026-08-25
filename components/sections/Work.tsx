@@ -16,7 +16,23 @@ type Project = {
 
 const allProjects: Project[] = [
   {
-    year: '2025',
+    year: '2026',
+    title: 'HybridGroups',
+    desc: 'Corporate platform for Hybrid Groups Nigeria — Renewable Energy, Agriculture & Food, Water & Beverages. Diversified conglomerate site with sectors, impact and leadership.',
+    stack: ['Next.js', 'Tailwind', 'Vercel'],
+    href: 'https://hybridgroups.vercel.app',
+    status: 'LIVE',
+  },
+  {
+    year: '2026',
+    title: 'Atlas',
+    desc: 'Fitness dashboard — Strength Programme, workout logging, library and chat. Companion to MuscleAtlas; strength-focused PWA.',
+    stack: ['Next.js', 'Supabase', 'Tailwind'],
+    href: 'https://musatlas.vercel.app',
+    status: 'LIVE',
+  },
+  {
+    year: '2026',
     title: 'ArtsyBrands',
     desc: 'Full-stack jewelry storefront: Next.js, Supabase, Cloudinary, Paystack, Resend. Custom JWT admin auth, Paystack webhooks, live in production.',
     stack: ['Next.js', 'Supabase', 'Cloudinary', 'Paystack', 'Resend'],
@@ -25,12 +41,28 @@ const allProjects: Project[] = [
     status: 'LIVE',
   },
   {
-    year: '2025',
+    year: '2026',
     title: 'MuscleAtlas',
     desc: 'AI-powered workout app for Nigerian gym-goers, built around a chat-first AI coach that reads logged sets and proactively adjusts the plan.',
     stack: ['Next.js', 'Supabase', 'Gemini API', 'Tailwind'],
     thumb: '/images/muscleatlas.jpg',
     href: 'https://muscleatlas.site',
+    status: 'LIVE',
+  },
+  {
+    year: '2026',
+    title: 'Northpoint Electrical',
+    desc: 'Licensed Master Electrician — Houston & Katy. Service site for Northpoint Houston Electric.',
+    stack: ['Next.js', 'Tailwind', 'Vercel'],
+    href: 'https://northpointelectrical.vercel.app',
+    status: 'LIVE',
+  },
+  {
+    year: '2026',
+    title: 'Appliant',
+    desc: 'Roof and home — Celina, TX roofing & storm restoration. Lead site for Appliant.',
+    stack: ['Next.js', 'Tailwind', 'Vercel'],
+    href: 'https://leads-zeta-sage.vercel.app',
     status: 'LIVE',
   },
   {
