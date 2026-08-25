@@ -27,9 +27,9 @@ const allProjects: Project[] = [
   {
     year: '2026',
     title: 'Joetheboy',
-    desc: 'Fashion e-commerce platform — curated streetwear storefront with Next.js, Supabase and Paystack, live in production.',
-    stack: ['Next.js', 'Supabase', 'Paystack', 'Tailwind'],
-    href: 'https://joetheboy.vercel.app',
+    desc: 'Fashion portfolio platform — curated showcase for a videographer/creative, clean visual routing and fast media delivery.',
+    stack: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Netlify'],
+    href: 'https://josephali.netlify.app',
     status: 'LIVE',
   },
   {
@@ -103,10 +103,10 @@ export default function Work() {
         </div>
 
         <motion.div
+          key={showAll ? 'all' : 'featured'}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-80px' }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } } }}
+          animate="show"
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } }}
           className="border-y border-border divide-y divide-border"
         >
           {projects.map((p) => (
@@ -115,9 +115,9 @@ export default function Work() {
               href={p.href ?? undefined}
               target={p.href ? '_blank' : undefined}
               rel={p.href ? 'noopener noreferrer' : undefined}
-              variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } } }}
-              whileHover={{ x: 4, backgroundColor: 'var(--color-surface-raised)' }}
-              className={`group flex gap-4 md:gap-6 py-6 px-0 md:px-4 transition-colors duration-200 ${p.href ? '' : 'pointer-events-none'}`}
+              variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } } }}
+              whileHover={{ x: 4 }}
+              className={`group flex gap-4 md:gap-6 py-6 px-0 md:px-4 hover:bg-surface-raised transition-colors duration-200 ${p.href ? '' : 'pointer-events-none'}`}
             >
               <span className="mono-label text-muted shrink-0 w-10 pt-1">{p.year}</span>
 

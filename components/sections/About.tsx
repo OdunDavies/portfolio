@@ -21,8 +21,14 @@ export default function About() {
             <p className="font-display font-bold text-ink leading-tight mb-4" style={{ fontSize: '18px' }}>
               Software engineer with a background in IT support, data analysis, and infrastructure.
             </p>
-            <p className="text-muted leading-relaxed mb-6" style={{ fontSize: '17.5px', lineHeight: '1.55' }}>
+            <p className="text-muted leading-relaxed mb-4" style={{ fontSize: '17.5px', lineHeight: '1.55' }}>
               Now building full-stack products and AI integrations for global clients and founders — taking ownership from requirements to production, regardless of timezone or team setup.
+            </p>
+            <p className="text-muted leading-relaxed mb-4 text-sm">
+              I work across frontend, backend, payments and infra in one sweep: Next.js and React for interfaces, Supabase and Postgres for data, Paystack and Resend for money and email, Cloudflare and Vercel for edge, Hetzner and systemd for anything that needs to stay up. I also integrate LLMs and automation where they actually move the needle — chat-first coaching in MuscleAtlas, proposal generation, and internal ops with n8n and Claude/Gemini APIs.
+            </p>
+            <p className="text-muted leading-relaxed mb-6 text-sm">
+              My edge is context-switching without losing the thread: from ticket queue to terminal, from stakeholder call to deploy log. I take a problem that is still fuzzy, make it concrete, ship a first version fast, then iterate with real users. No handoff theatre — just working software in production.
             </p>
             <p className="text-muted leading-relaxed border-t border-border pt-6 text-sm">
               Infrastructure note: self-hosted AI agent on Hetzner, Gemini API + Telegram — Linux/PM2/systemd. Available for remote collaboration worldwide.
@@ -38,14 +44,14 @@ export default function About() {
             >
               <p className="mono-label text-muted mb-4">Experience</p>
               <motion.ul variants={{ hidden: {}, show: { transition: { staggerChildren: 0.07 } } }} className="divide-y divide-border border-y border-border mb-8">
-                <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
-                  <span className="text-sm"><span className="font-medium text-ink">Acacia — IT Support</span> <span className="text-muted">· 2025–2026</span></span>
-                  <span className="text-muted text-xs block mt-1 leading-relaxed">Enterprise IT support covering device provisioning and lifecycle management, endpoint hardening, user account provisioning and access control, hardware inventory and asset tracking, plus internal knowledge-base documentation. First-contact resolution focus with clear hand-offs to engineering when needed.</span>
-                </motion.li>
-                <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
-                  <span className="text-sm"><span className="font-medium text-ink">Freelance — Full-stack & AI</span> <span className="text-muted">— 2023–2026</span></span>
-                  <span className="text-muted text-xs block mt-1 leading-relaxed">Independent builds for startups and SMEs worldwide — e-commerce (ArtsyBrands, Joetheboy), corporate platforms (HybridGroups), and AI fitness products (MuscleAtlas). Owns requirements, architecture, payments, infra and deploy.</span>
-                </motion.li>
+              <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
+                <span className="text-sm"><span className="font-medium text-ink">Acacia — IT Support</span> <span className="text-muted">· 2025–2026</span></span>
+                <span className="text-muted text-xs block mt-1 leading-relaxed">Enterprise IT support covering device provisioning and lifecycle management, endpoint hardening, user account provisioning and access control, hardware inventory and asset tracking, plus internal knowledge-base documentation. First-contact resolution focus with clear hand-offs to engineering when needed.</span>
+              </motion.li>
+              <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
+                <span className="text-sm"><span className="font-medium text-ink">Freelance — Full-stack & AI</span> <span className="text-muted">— 2023–2026</span></span>
+                <span className="text-muted text-xs block mt-1 leading-relaxed">Independent builds for global clients — e-commerce, corporate platforms and AI products — owning requirements through deploy without handoffs.</span>
+              </motion.li>
                 <motion.li variants={{ hidden: { opacity: 0, x: -8 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } }} className="py-4">
                   <span className="text-sm"><span className="font-medium text-ink">Transmission Company of Nigeria — IT Support Intern</span> <span className="text-muted">· 2024</span></span>
                   <span className="text-muted text-xs block mt-1 leading-relaxed">95% first-contact resolution across hardware, software and connectivity tickets. Provisioned desktops/laptops end-to-end, managed onboarding/offboarding and compliance checks, authored internal docs to unblock non-technical users.</span>

@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 export default function Hero() {
   return (
@@ -22,72 +21,47 @@ export default function Hero() {
 
           <motion.div
             variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="flex items-start gap-4 mb-6"
+            className="mb-6"
           >
-            <div className="flex-1">
-              <h1 className="font-display font-bold tracking-tight text-ink leading-[0.95] text-[clamp(36px,6vw,68px)]" style={{ letterSpacing: '-0.015em' }}>
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
-                    className="block"
-                  >
-                    I embed with the
-                  </motion.span>
-                </span>
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.13 } } }}
-                    className="block"
-                  >
-                    problem, build the
-                  </motion.span>
-                </span>
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.26 } } }}
-                    className="block"
-                  >
-                    software, and get it
-                  </motion.span>
-                </span>
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.39 } } }}
-                    className="block"
-                  >
-                    into production.
-                  </motion.span>
-                </span>
-              </h1>
-            </div>
-
-            <motion.div
-              variants={{ hidden: { opacity: 0, scale: 0.95 }, show: { opacity: 1, scale: 1, transition: { duration: 0.6, delay: 0.5 } } }}
-              className="hidden md:block shrink-0"
-            >
-              <Image
-                src="/odunayo.jpg"
-                alt="Odunayo Idowu"
-                width={96}
-                height={96}
-                className="w-24 h-24 object-cover grayscale border border-border"
-                priority
-              />
-            </motion.div>
-          </motion.div>
-
-          {/* Mobile photo + stat */}
-          <motion.div
-            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="flex md:hidden items-center gap-4 mb-6"
-          >
-            <Image src="/odunayo.jpg" alt="Odunayo Idowu" width={64} height={64} className="w-16 h-16 object-cover grayscale border border-border" />
-            <p className="mono-label text-muted">3 live products in production</p>
+            <h1 className="font-display font-bold tracking-tight text-ink leading-[0.95] text-[clamp(36px,6vw,68px)]" style={{ letterSpacing: '-0.015em' }}>
+              <span className="block overflow-hidden">
+                <motion.span
+                  variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
+                  className="block"
+                >
+                  I embed with the
+                </motion.span>
+              </span>
+              <span className="block overflow-hidden">
+                <motion.span
+                  variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.13 } } }}
+                  className="block"
+                >
+                  problem, build the
+                </motion.span>
+              </span>
+              <span className="block overflow-hidden">
+                <motion.span
+                  variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.26 } } }}
+                  className="block"
+                >
+                  software, and get it
+                </motion.span>
+              </span>
+              <span className="block overflow-hidden">
+                <motion.span
+                  variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.39 } } }}
+                  className="block"
+                >
+                  into production.
+                </motion.span>
+              </span>
+            </h1>
           </motion.div>
 
           <motion.p
             variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="hidden md:block mono-label text-muted mb-4"
+            className="mono-label text-muted mb-4"
           >
             3 live products in production
           </motion.p>
