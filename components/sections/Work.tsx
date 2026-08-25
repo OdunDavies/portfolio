@@ -26,8 +26,8 @@ const allProjects: Project[] = [
   },
   {
     year: '2026',
-    title: 'Joetheboy',
-    desc: 'Fashion portfolio platform — curated showcase for a videographer/creative, clean visual routing and fast media delivery.',
+    title: 'Joetheboy — Joseph Ali',
+    desc: 'Portfolio platform for Joseph Ali — videographer & video editor (commercial, documentary, creative). Specializing in color grading, motion graphics and post-production, the site translates his production expertise into a fast, visual portfolio focused on the work and the path for prospective clients to get in touch.',
     stack: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Netlify'],
     href: 'https://josephali.netlify.app',
     status: 'LIVE',
