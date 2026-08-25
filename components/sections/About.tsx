@@ -33,31 +33,9 @@ export default function About() {
             <p className="font-display font-bold text-ink leading-tight mb-4" style={{ fontSize: '18px' }}>
               Software engineer with a background in IT support, data analysis, and infrastructure.
             </p>
-            <p className="text-muted leading-relaxed mb-8" style={{ fontSize: '17.5px', lineHeight: '1.55' }}>
+            <p className="text-muted leading-relaxed mb-6" style={{ fontSize: '17.5px', lineHeight: '1.55' }}>
               Now building full-stack products and AI integrations for global clients and founders — taking ownership from requirements to production, regardless of timezone or team setup.
             </p>
-
-            <div className="mb-8">
-              <p className="mono-label text-muted mb-4">Who I Work With</p>
-              <div className="grid grid-cols-1 gap-4">
-                <div>
-                  <p className="text-sm font-medium text-ink">Businesses</p>
-                  <p className="text-xs text-muted leading-relaxed">Companies needing more than a brochure site — e-commerce, booking flows, internal tools that actually run the operation.</p>
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-ink">Creatives</p>
-                  <p className="text-xs text-muted leading-relaxed">Videographers, photographers and designers who need their work to stay center stage while the tech disappears — like Joetheboy.</p>
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-ink">SMEs & Startups</p>
-                  <p className="text-xs text-muted leading-relaxed">Teams moving beyond social media to owned infrastructure — domain, payments, email and deploy handled end-to-end.</p>
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-ink">Organizations</p>
-                  <p className="text-xs text-muted leading-relaxed">Teams needing troubleshooting, device/account setup, documentation and hands-on support that turns fuzzy requirements into shipped software.</p>
-                </div>
-              </div>
-            </div>
 
             <p className="text-muted leading-relaxed border-t border-border pt-6 text-sm">
               Infrastructure note: self-hosted AI agent on Hetzner, Gemini API + Telegram — Linux/PM2/systemd. Available for remote collaboration worldwide.

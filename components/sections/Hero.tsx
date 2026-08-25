@@ -68,9 +68,16 @@ export default function Hero() {
 
           <motion.p
             variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="mono-label text-muted mb-4"
+            className="mono-label text-muted mb-3"
           >
             3 live products in production
+          </motion.p>
+
+          <motion.p
+            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+            className="text-muted leading-relaxed mb-4 max-w-2xl text-sm"
+          >
+            I work with businesses needing more than a brochure site, creatives like videographers and designers who need their work center stage, SMEs and startups moving beyond social to owned infrastructure, and organizations needing hands-on support to turn fuzzy requirements into shipped software.
           </motion.p>
 
           <motion.p
