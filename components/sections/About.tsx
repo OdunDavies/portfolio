@@ -32,13 +32,13 @@ export default function About() {
           <div>
             <p className="mono-label text-muted mb-4">Experience</p>
             <ul className="divide-y divide-border border-y border-border mb-8">
-              <li className="py-4 flex justify-between gap-4">
-                <span className="text-sm"><span className="font-medium text-ink">Acacia</span> <span className="text-muted">— 2021–2023</span></span>
-                <span className="mono-label text-muted shrink-0">2021</span>
+              <li className="py-4">
+                <span className="text-sm"><span className="font-medium text-ink">Acacia</span> <span className="text-muted">— IT Support · 2025–2026</span></span>
+                <span className="text-muted text-xs block mt-1">Enterprise IT support, device provisioning, endpoint support, user accounts & IT documentation</span>
               </li>
               <li className="py-4">
                 <span className="text-sm"><span className="font-medium text-ink">Freelance — Full-stack & AI</span> <span className="text-muted">— 2023–2026</span></span>
-                <span className="text-muted text-xs block mt-1">Client products shipped to production (ArtsyBrands, MuscleAtlas, SarkiMota)</span>
+                <span className="text-muted text-xs block mt-1">Client products shipped to production (ArtsyBrands, Joetheboy, Atlas, HybridGroups)</span>
               </li>
               <li className="py-4 flex justify-between gap-4">
                 <span className="text-sm"><span className="font-medium text-ink">Transmission Company of Nigeria</span> <span className="text-muted">— IT Support · 95% first-contact</span></span>

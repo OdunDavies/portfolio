@@ -71,7 +71,7 @@ export default function WayfindingNav() {
                   <span
                     className={`absolute right-0 top-1/2 -translate-y-1/2 h-px transition-all duration-200 ${
                       isActive
-                        ? 'w-[18px] bg-ink'
+                        ? 'w-[18px] bg-accent'
                         : 'w-[6px] bg-current opacity-40'
                     }`}
                   />

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk, JetBrains_Mono, Inter } from 'next/font/google'
+import { GeistMono } from 'geist/font/mono'
+import '@fontsource-variable/inter'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -7,27 +8,6 @@ import ScrollProgress from '@/components/ScrollProgress'
 import WayfindingNav from '@/components/WayfindingNav'
 import ScrollToTop from '@/components/ScrollToTop'
 import ChatWidget from '@/components/ChatWidget'
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['700'],
-  variable: '--font-space-grotesk',
-  display: 'swap',
-})
-
-const jetbrains = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-jetbrains',
-  display: 'swap',
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-inter',
-  display: 'swap',
-})
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://odunayo.xyz'
 
@@ -94,7 +74,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${jetbrains.variable} ${inter.variable}`}>
+    <html lang="en" className={GeistMono.variable}>
       <head>
         <script
           type="application/ld+json"
@@ -103,7 +83,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-background text-ink font-sans antialiased" style={{ fontSize: '17.5px', lineHeight: '1.55' }}>
+      <body className="bg-background text-ink font-sans antialiased">
         <ScrollProgress />
         <Navbar />
         <WayfindingNav />

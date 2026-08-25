@@ -17,10 +17,19 @@ type Project = {
 const allProjects: Project[] = [
   {
     year: '2026',
-    title: 'HybridGroups',
-    desc: 'Corporate platform for Hybrid Groups Nigeria — Renewable Energy, Agriculture & Food, Water & Beverages. Diversified conglomerate site with sectors, impact and leadership.',
-    stack: ['Next.js', 'Tailwind', 'Vercel'],
-    href: 'https://hybridgroups.vercel.app',
+    title: 'ArtsyBrands',
+    desc: 'Full-stack jewelry storefront: Next.js, Supabase, Cloudinary, Paystack, Resend. Custom JWT admin auth, Paystack webhooks, live in production.',
+    stack: ['Next.js', 'Supabase', 'Cloudinary', 'Paystack', 'Resend'],
+    thumb: '/images/artsybrandss.jpg',
+    href: 'https://artsybrandss.com',
+    status: 'LIVE',
+  },
+  {
+    year: '2026',
+    title: 'Joetheboy',
+    desc: 'Fashion e-commerce platform — curated streetwear storefront with Next.js, Supabase and Paystack, live in production.',
+    stack: ['Next.js', 'Supabase', 'Paystack', 'Tailwind'],
+    href: 'https://joetheboy.vercel.app',
     status: 'LIVE',
   },
   {
@@ -33,11 +42,10 @@ const allProjects: Project[] = [
   },
   {
     year: '2026',
-    title: 'ArtsyBrands',
-    desc: 'Full-stack jewelry storefront: Next.js, Supabase, Cloudinary, Paystack, Resend. Custom JWT admin auth, Paystack webhooks, live in production.',
-    stack: ['Next.js', 'Supabase', 'Cloudinary', 'Paystack', 'Resend'],
-    thumb: '/images/artsybrandss.jpg',
-    href: 'https://artsybrandss.com',
+    title: 'HybridGroups',
+    desc: 'Corporate platform for Hybrid Groups Nigeria — Renewable Energy, Agriculture & Food, Water & Beverages. Diversified conglomerate site with sectors, impact and leadership.',
+    stack: ['Next.js', 'Tailwind', 'Vercel'],
+    href: 'https://hybridgroups.vercel.app',
     status: 'LIVE',
   },
   {
