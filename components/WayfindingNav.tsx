@@ -5,12 +5,8 @@ import { useEffect, useState, useCallback } from 'react'
 const sections = [
   { id: 'hero', number: '00', label: 'Intro' },
   { id: 'work', number: '01', label: 'Work' },
-  { id: 'experience', number: '02', label: 'Career' },
-  { id: 'process', number: '03', label: 'Approach' },
-  { id: 'clients', number: '04', label: 'Clients' },
-  { id: 'about', number: '05', label: 'About' },
-  { id: 'tools', number: '06', label: 'Stack' },
-  { id: 'contact', number: '07', label: 'Reach' },
+  { id: 'about', number: '02', label: 'About' },
+  { id: 'contact', number: '03', label: 'Contact' },
 ]
 
 export default function WayfindingNav() {

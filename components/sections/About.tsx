@@ -19,6 +19,18 @@ export default function About() {
               <li className="flex gap-3 text-sm">
                 <span className="text-muted shrink-0">—</span>
                 <span className="text-muted">
+                  <span className="text-ink font-medium">Acacia</span> — 2021–2023
+                </span>
+              </li>
+              <li className="flex gap-3 text-sm">
+                <span className="text-muted shrink-0">—</span>
+                <span className="text-muted">
+                  <span className="text-ink font-medium">Freelance — Full-stack & AI</span> — 2023–2026 — client products shipped to production (ArtsyBrands, MuscleAtlas, SarkiMota)
+                </span>
+              </li>
+              <li className="flex gap-3 text-sm">
+                <span className="text-muted shrink-0">—</span>
+                <span className="text-muted">
                   <span className="text-ink font-medium">IT Support, Transmission Company of Nigeria</span> — 95% first-contact resolution — 2024
                 </span>
               </li>

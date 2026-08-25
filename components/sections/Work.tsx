@@ -1,7 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
-
 const projects = [
   {
     title: 'ArtsyBrands',
@@ -32,7 +30,7 @@ export default function Work() {
       <div className="max-w-5xl mx-auto">
         <h2 className="font-mono text-xs tracking-[0.2em] text-muted mb-10">WORK</h2>
 
-        <div className="flex flex-col divide-y divide-border border-y border-border">
+        <div className="flex flex-col divide-y divide-border border-y border-border mb-10">
           {projects.map((p) => (
             <div key={p.title} className="py-8 grid md:grid-cols-[200px_1fr] gap-4">
               <div>
@@ -54,6 +52,13 @@ export default function Work() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="border border-border p-6">
+          <p className="font-mono text-xs tracking-widest text-muted uppercase mb-3">Freelancing — 2023–2026</p>
+          <p className="text-sm text-muted leading-relaxed">
+            Independent full-stack and AI integration work for clients and founders — taking problems from requirements to deployed products without handoffs. Selected shipped work above; ongoing.
+          </p>
         </div>
       </div>
     </section>
