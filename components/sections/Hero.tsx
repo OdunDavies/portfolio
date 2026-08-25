@@ -3,6 +3,12 @@
 import { motion } from 'framer-motion'
 
 export default function Hero() {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault()
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    history.replaceState(null, '', window.location.pathname + window.location.search)
+  }
+
   return (
     <section id="hero" aria-label="Introduction" className="px-4 md:px-6 py-6 md:py-8 overflow-hidden relative">
       <div className="max-w-5xl mx-auto border border-border bg-surface-raised p-6 md:p-10 shadow-sm relative">
@@ -78,10 +84,10 @@ export default function Hero() {
             variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
             className="flex flex-wrap gap-3 mb-10"
           >
-            <a href="#work" className="inline-flex items-center bg-ink text-background px-6 py-3 font-mono text-xs tracking-widest uppercase hover:opacity-90 transition-opacity">
+            <a href="#work" onClick={(e) => handleScroll(e, 'work')} className="inline-flex items-center bg-ink text-background px-6 py-3 font-mono text-xs tracking-widest uppercase hover:opacity-90 transition-opacity">
               View Work
             </a>
-            <a href="#contact" className="inline-flex items-center border border-border-strong px-6 py-3 font-mono text-xs tracking-widest uppercase bg-background hover:bg-panel transition-colors">
+            <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="inline-flex items-center border border-border-strong px-6 py-3 font-mono text-xs tracking-widest uppercase bg-background hover:bg-panel transition-colors">
               Let&apos;s Talk
             </a>
           </motion.div>

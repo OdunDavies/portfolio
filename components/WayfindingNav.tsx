@@ -48,6 +48,11 @@ export default function WayfindingNav() {
               <li key={id}>
                 <a
                   href={`#${id}`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    history.replaceState(null, '', window.location.pathname + window.location.search)
+                  }}
                   onMouseEnter={() => setHovered(id)}
                   onMouseLeave={() => setHovered(null)}
                   className={`relative block h-8 w-36 text-xs font-mono tracking-wide transition-colors duration-200 ${

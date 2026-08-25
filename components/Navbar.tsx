@@ -18,6 +18,13 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const id = href.replace('#', '')
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    history.replaceState(null, '', window.location.pathname + window.location.search)
+  }
+
   return (
     <header
       className={`sticky top-0 z-50 bg-background/95 backdrop-blur-sm transition-colors duration-300 ${
@@ -39,7 +46,7 @@ export default function Navbar() {
             <ul className="flex items-center gap-3 md:gap-6" role="list">
               {navLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <a href={href} className="font-mono text-[11px] md:text-xs tracking-widest text-muted hover:text-ink transition-colors py-2 px-1 inline-block">
+                  <a href={href} onClick={(e) => handleNavClick(e, href)} className="font-mono text-[11px] md:text-xs tracking-widest text-muted hover:text-ink transition-colors py-2 px-1 inline-block">
                     {label.toUpperCase()}
                   </a>
                 </li>

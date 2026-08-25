@@ -69,9 +69,9 @@ const allProjects: Project[] = [
     year: '2024',
     title: 'SarkiMota Group',
     desc: 'Built an unsolicited pitch site and content strategy playbook for a Nigerian luxury holding company. Led to a direct interview invitation from the chairman.',
-    stack: ['Next.js', 'Content Strategy'],
-    href: null,
-    status: 'CASE STUDY',
+    stack: ['Next.js', 'Content Strategy', 'Vercel'],
+    href: 'https://sarkinmotacars-odunayo718-gmailcoms-projects.vercel.app',
+    status: 'LIVE',
   },
 ]
 
