@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { FiMonitor, FiGlobe, FiWifi } from 'react-icons/fi'
 
 export default function Hero() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -103,6 +104,29 @@ export default function Hero() {
             <span>Deploy</span>
             <span className="text-border-strong">→</span>
             <span>Iterate</span>
+          </motion.div>
+
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } } }}
+            className="mt-8 flex flex-wrap gap-3"
+          >
+            {[
+              { Icon: FiMonitor, label: 'Laptop' },
+              { Icon: FiGlobe, label: 'Internet' },
+              { Icon: FiWifi, label: 'WiFi' },
+            ].map(({ Icon, label }) => (
+              <motion.span
+                key={label}
+                animate={{ y: [0, -4, 0] }}
+                transition={{ duration: 2 + Math.random(), repeat: Infinity, ease: 'easeInOut', delay: Math.random() * 0.5 }}
+                className="inline-flex items-center gap-2 border border-border bg-panel px-3 py-1.5 rounded-full"
+              >
+                <span className="w-6 h-6 rounded-full bg-background border border-border flex items-center justify-center">
+                  <Icon className="w-3 h-3 text-ink" />
+                </span>
+                <span className="mono-label text-muted" style={{ fontSize: '10px' }}>{label}</span>
+              </motion.span>
+            ))}
           </motion.div>
 
           <motion.div

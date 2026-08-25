@@ -18,8 +18,8 @@ const allProjects: Project[] = [
   {
     year: '2026',
     title: 'ArtsyBrands',
-    desc: 'Full-stack jewelry storefront: Next.js, Supabase, Cloudinary, Paystack, Resend. Custom JWT admin auth, Paystack webhooks, live in production.',
-    stack: ['Next.js', 'Supabase', 'Cloudinary', 'Paystack', 'Resend'],
+    desc: 'ArtsyBrands needed more than a storefront — a full e-commerce infrastructure: branded jewelry catalog, custom domain, transactional email, SSL and secure checkout. Built with Next.js/Supabase/Cloudinary for products and imagery, Paystack webhooks + custom JWT admin for orders, and Resend/React Email for confirmations. Live in production at artsybrandss.com via Cloudflare DNS/SSL handling real payments.',
+    stack: ['Next.js', 'Supabase', 'Cloudinary', 'Paystack', 'Resend', 'Cloudflare'],
     thumb: '/images/artsybrandss.jpg',
     href: 'https://artsybrandss.com',
     status: 'LIVE',

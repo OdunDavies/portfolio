@@ -1,13 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { SiGithub, SiGmail, SiWhatsapp, SiX } from 'react-icons/si'
+import { FaLinkedin } from 'react-icons/fa'
 
 const links = [
-  { label: 'Email', href: 'mailto:odunayodev@gmail.com' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/odunayo-idowu-a114ab217/' },
-  { label: 'GitHub', href: 'https://github.com/OdunDavies' },
-  { label: 'X', href: 'https://x.com/theoduntwits' },
-  { label: 'WhatsApp', href: 'https://wa.me/2348055048536' },
+  { label: 'Email', href: 'mailto:odunayodev@gmail.com', Icon: SiGmail },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/odunayo-idowu-a114ab217/', Icon: FaLinkedin },
+  { label: 'GitHub', href: 'https://github.com/OdunDavies', Icon: SiGithub },
+  { label: 'X', href: 'https://x.com/theoduntwits', Icon: SiX },
+  { label: 'WhatsApp', href: 'https://wa.me/2348055048536', Icon: SiWhatsapp },
 ]
 
 export default function Contact() {
@@ -34,16 +36,19 @@ export default function Contact() {
             Let&apos;s talk →
           </a>
 
-          <div className="flex flex-wrap gap-x-6 gap-y-3 mt-10 pt-6 border-t border-border">
-            {links.map((link) => (
+          <div className="flex flex-wrap gap-3 mt-10 pt-6 border-t border-border">
+            {links.map(({ label, href, Icon }) => (
               <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith('mailto') ? undefined : '_blank'}
-                rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                className="mono-label text-muted hover:text-ink transition-colors"
+                key={label}
+                href={href}
+                target={href.startsWith('mailto') ? undefined : '_blank'}
+                rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                className="group flex items-center gap-2 border border-border bg-panel pl-1 pr-3 py-1 rounded-full hover:bg-ink hover:border-ink transition-colors"
               >
-                {link.label}
+                <span className="w-7 h-7 rounded-full bg-background border border-border flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:border-accent transition-colors">
+                  <Icon className="w-3.5 h-3.5 text-ink group-hover:text-white" />
+                </span>
+                <span className="mono-label text-muted group-hover:text-background transition-colors">{label}</span>
               </a>
             ))}
           </div>
