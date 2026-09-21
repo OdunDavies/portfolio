@@ -14,6 +14,31 @@ export const projects: Project[] = [
     status: 'shipped',
   },
   {
+    slug: 'sarkin-mota',
+    title: 'Sarkin Mota Group',
+    problem:
+      'Sarkin Mota Group needed a professional corporate web presence to establish their brand identity and showcase their services online.',
+    outcome: 'Live corporate website deployed on Vercel with modern design and fast performance.',
+    tags: ['Next.js', 'Vercel', 'TypeScript', 'Tailwind CSS'],
+    href: 'https://sarkinmotagroup.vercel.app',
+    imageSrc: '/images/sarkinmota.svg',
+    imageAlt: 'Sarkin Mota Group corporate website',
+    status: 'shipped',
+  },
+  {
+    slug: 'nls-93-alumni',
+    title: "NLS '93 — Alumni Association",
+    problem:
+      'The Nigeria Law School Class of 1993 needed a premium digital home to connect 1000+ alumni — including 40+ SANs and judges — showcase three decades of impact, and centralise conferences, achievements, and membership.',
+    outcome:
+      'Shipped a fully responsive alumni platform with member directory, conference timeline, achievements archive, gallery, and contact system — navy/gold editorial design inspired by Templars Law.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Vercel', 'Responsive Design'],
+    href: 'https://nls93.vercel.app/',
+    imageSrc: '/images/nls93.jpg',
+    imageAlt: "Nigeria Law School Class of 1993 Alumni Association website — https://nls93.vercel.app",
+    status: 'shipped',
+  },
+  {
     slug: 'muscleatlas',
     title: 'MuscleAtlas',
     problem:

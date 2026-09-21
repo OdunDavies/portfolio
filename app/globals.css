@@ -3,11 +3,13 @@
 @theme {
   --color-background: #FFF8E7;
   --color-ink: #0F0F0F;
-  --color-accent: #C4622D;
+  --color-accent: #b8962f;
+  --color-accent-hover: #d4af37;
   --color-muted: #6B6B6B;
   --color-border: #F0E0C8;
   --color-surface-raised: #FFF0D9;
   --color-surface-highest: #FFE8BE;
+  --color-navy: #002147;
 
   --font-sans: 'Inter Variable', Inter, sans-serif;
   --font-mono: var(--font-geist-mono);
@@ -30,12 +32,12 @@ section {
 }
 
 ::selection {
-  background: #C4622D;
+  background: #b8962f;
   color: #FFF8E7;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #C4622D 0%, #E8915A 50%, #C4622D 100%);
+  background: linear-gradient(135deg, #b8962f 0%, #d4af37 50%, #b8962f 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -57,7 +59,7 @@ section {
 
 .reticule-link .reticule-corners span {
   opacity: 0;
-  border: 1px solid #C4622D;
+  border: 1px solid #b8962f;
   width: 7px;
   height: 7px;
   position: absolute;
@@ -110,7 +112,7 @@ section {
 }
 
 .status-live {
-  background: #C4622D;
+  background: #b8962f;
   color: #FFFFFF;
   font-family: var(--font-mono);
   font-size: 11px;
@@ -136,15 +138,15 @@ section {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background: #C4622D;
-  box-shadow: 0 0 0 0 rgba(196,98,45,0.4);
+  background: #b8962f;
+  box-shadow: 0 0 0 0 rgba(184,150,47,0.4);
   animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
 }
 
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(196,98,45,0.4); }
-  70% { box-shadow: 0 0 0 8px rgba(196,98,45,0); }
-  100% { box-shadow: 0 0 0 0 rgba(196,98,45,0); }
+  0% { box-shadow: 0 0 0 0 rgba(184,150,47,0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(184,150,47,0); }
+  100% { box-shadow: 0 0 0 0 rgba(184,150,47,0); }
 }
 
 .contact-sweep {
@@ -164,7 +166,7 @@ section {
   content: "";
   position: absolute;
   inset: -1px;
-  background: conic-gradient(from 0deg, transparent 0deg, transparent 280deg, #C4622D 360deg);
+  background: conic-gradient(from 0deg, transparent 0deg, transparent 280deg, #b8962f 360deg);
   opacity: 0;
   transition: opacity 0.4s ease;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -190,8 +192,8 @@ section {
   }
   .gradient-text {
     background: none;
-    -webkit-text-fill-color: #C4622D;
-    color: #C4622D;
+    -webkit-text-fill-color: #b8962f;
+    color: #b8962f;
   }
   .pulse-dot { animation: none; }
   .contact-sweep:hover::after { animation: none; }
