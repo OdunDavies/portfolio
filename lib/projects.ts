@@ -14,18 +14,6 @@ export const projects: Project[] = [
     status: 'shipped',
   },
   {
-    slug: 'sarkin-mota',
-    title: 'Sarkin Mota Group',
-    problem:
-      'Sarkin Mota Group needed a professional corporate web presence to establish their brand identity and showcase their services online.',
-    outcome: 'Live corporate website deployed on Vercel with modern design and fast performance.',
-    tags: ['Next.js', 'Vercel', 'TypeScript', 'Tailwind CSS'],
-    href: 'https://sarkinmotagroup.vercel.app',
-    imageSrc: '/images/sarkinmota.svg',
-    imageAlt: 'Sarkin Mota Group corporate website',
-    status: 'shipped',
-  },
-  {
     slug: 'nls-93-alumni',
     title: "NLS '93 — Alumni Association",
     problem:
