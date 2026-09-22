@@ -11,11 +11,12 @@ const TERMINAL_LINES = [
   'into production.',
 ]
 
-function TerminalHeadline() {
+function TerminalHeadline({ startDelayMs = 900 }: { startDelayMs?: number }) {
   const [displayed, setDisplayed] = useState<string[]>(['', '', '', ''])
   const [lineIdx, setLineIdx] = useState(0)
   const [charIdx, setCharIdx] = useState(0)
   const [done, setDone] = useState(false)
+  const [started, setStarted] = useState(false)
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
 
   useEffect(() => {
@@ -32,6 +33,12 @@ function TerminalHeadline() {
       setDone(true)
       return
     }
+    const t0 = setTimeout(() => setStarted(true), startDelayMs)
+    return () => clearTimeout(t0)
+  }, [prefersReducedMotion, startDelayMs])
+
+  useEffect(() => {
+    if (!started || prefersReducedMotion) return
     if (lineIdx >= TERMINAL_LINES.length) {
       setDone(true)
       return
@@ -53,7 +60,7 @@ function TerminalHeadline() {
       setCharIdx(0)
     }, 280)
     return () => clearTimeout(t)
-  }, [lineIdx, charIdx, prefersReducedMotion])
+  }, [lineIdx, charIdx, prefersReducedMotion, started])
 
   return (
     <h1
@@ -123,10 +130,7 @@ export default function Hero() {
           </motion.p>
 
           <div className="mb-6">
-            <TerminalHeadline />
-            <span className="mono-label text-muted mt-2 block" aria-hidden="true">
-              <span className="inline-block w-2 h-2 bg-ink mr-2 align-middle" /> terminal — typing…
-            </span>
+            <TerminalHeadline startDelayMs={1100} />
           </div>
 
           <motion.p
