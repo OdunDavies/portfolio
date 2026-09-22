@@ -1,25 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #FFF8E7;
-  --color-ink: #0F0F0F;
-  --color-accent: #b8962f;
-  --color-accent-hover: #d4af37;
-  --color-muted: #6B6B6B;
-  --color-border: #F0E0C8;
-  --color-surface-raised: #FFF0D9;
-  --color-surface-highest: #FFE8BE;
-  --color-navy: #002147;
+  /* punk.is-a.dev — brutalist monochrome */
+  --color-background: #ffffff;
+  --color-ink: #000000;
+  --color-accent: #000000;
+  --color-accent-hover: #111111;
+  --color-muted: #737373;
+  --color-border: #000000;
+  --color-border-subtle: #e5e5e5;
+  --color-surface-raised: #f5f5f5;
+  --color-surface-highest: #000000;
+  --color-panel: #ffffff;
 
-  --font-sans: 'Inter Variable', Inter, sans-serif;
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans), Geist, sans-serif;
+  --font-mono: var(--font-geist-mono), Geist Mono, monospace;
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 64px;
-  background-color: #FFF8E7;
-  color: #0F0F0F;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 section {
@@ -32,15 +34,18 @@ section {
 }
 
 ::selection {
-  background: #b8962f;
-  color: #FFF8E7;
+  background: #000000;
+  color: #ffffff;
 }
 
+/* punk: no gradient — flat black mono */
 .gradient-text {
-  background: linear-gradient(135deg, #b8962f 0%, #d4af37 50%, #b8962f 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: none;
+  -webkit-text-fill-color: #000000;
+  color: #000000;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
 }
 
 .reticule-link {
@@ -48,6 +53,8 @@ section {
   isolation: isolate;
   padding-block: 0.6em;
   line-height: 1;
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
 }
 
 .reticule-link .reticule-corners {
@@ -59,7 +66,7 @@ section {
 
 .reticule-link .reticule-corners span {
   opacity: 0;
-  border: 1px solid #b8962f;
+  border: 1px solid #000000;
   width: 7px;
   height: 7px;
   position: absolute;
@@ -108,28 +115,29 @@ section {
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 .status-live {
-  background: #b8962f;
-  color: #FFFFFF;
+  background: #000000;
+  color: #ffffff;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   padding: 4px 8px;
   line-height: 1;
+  border: 1px solid #000000;
 }
 
 .status-outline {
   background: transparent;
-  color: #0F0F0F;
-  border: 1px solid #F0E0C8;
+  color: #000000;
+  border: 1px solid #000000;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   padding: 3px 8px;
   line-height: 1;
 }
@@ -138,27 +146,28 @@ section {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background: #b8962f;
-  box-shadow: 0 0 0 0 rgba(184,150,47,0.4);
+  background: #000000;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.3);
   animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
 }
 
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(184,150,47,0.4); }
-  70% { box-shadow: 0 0 0 8px rgba(184,150,47,0); }
-  100% { box-shadow: 0 0 0 0 rgba(184,150,47,0); }
+  0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.3); }
+  70% { box-shadow: 0 0 0 8px rgba(0,0,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
 }
 
 .contact-sweep {
   position: relative;
   overflow: hidden;
+  border: 1px solid #000000;
 }
 
 .contact-sweep::before {
   content: "";
   position: absolute;
   inset: -1px;
-  border: 1px solid #F0E0C8;
+  border: 1px solid #000000;
   pointer-events: none;
 }
 
@@ -166,7 +175,7 @@ section {
   content: "";
   position: absolute;
   inset: -1px;
-  background: conic-gradient(from 0deg, transparent 0deg, transparent 280deg, #b8962f 360deg);
+  background: conic-gradient(from 0deg, transparent 0deg, transparent 280deg, #000000 360deg);
   opacity: 0;
   transition: opacity 0.4s ease;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -185,6 +194,25 @@ section {
   to { transform: rotate(360deg); }
 }
 
+/* punk loading — oh hello */
+.punk-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  color: #ffffff;
+}
+
+.punk-loader h1 {
+  font-family: var(--font-mono);
+  font-size: 2.25rem;
+  text-transform: lowercase;
+  letter-spacing: -0.05em;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reticule-link .reticule-corners span {
     transition: none;
@@ -192,8 +220,8 @@ section {
   }
   .gradient-text {
     background: none;
-    -webkit-text-fill-color: #b8962f;
-    color: #b8962f;
+    -webkit-text-fill-color: #000000;
+    color: #000000;
   }
   .pulse-dot { animation: none; }
   .contact-sweep:hover::after { animation: none; }

@@ -39,15 +39,16 @@ export const projects: Project[] = [
     status: 'shipped',
   },
   {
-    slug: 'muscleatlas',
-    title: 'MuscleAtlas',
+    slug: 'forge',
+    title: 'Forge — AI Training OS',
     problem:
-      'AI-powered workout app for Nigerian gym-goers, built around a chat-first AI coach that reads logged sets and proactively adjusts the plan.',
-    outcome: 'Live at muscleatlas.site — interactive muscle-group targeting and workout tracking with AI coach.',
-    tags: ['Next.js', 'Supabase', 'Tailwind CSS', 'Gemini API'],
-    href: 'https://muscleatlas.site',
-    imageSrc: '/images/muscleatlas.jpg',
-    imageAlt: 'MuscleAtlas fitness platform',
+      'Gym-goers log sessions in a few taps, follow a plan biased to the muscles they want to grow, and need a coach that actually reads their history. Existing trackers are manual and generic.',
+    outcome:
+      'Shipped Forge — log sessions in taps, auto-progressive plan by target muscles, Gemini coach, and shareable recap cards. TanStack Start + React 19 + Postgres (Neon/PGlite). Live at forgexyx.vercel.app.',
+    tags: ['TanStack Start', 'React 19', 'TypeScript', 'Postgres', 'Better Auth', 'Gemini API'],
+    href: 'https://forgexyx.vercel.app',
+    imageSrc: '/images/forge.jpg',
+    imageAlt: 'Forge — AI training OS for lifting',
     status: 'shipped',
   },
 ]
