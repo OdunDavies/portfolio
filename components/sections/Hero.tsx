@@ -11,12 +11,11 @@ const TERMINAL_LINES = [
   'into production.',
 ]
 
-function TerminalHeadline({ startDelayMs = 900 }: { startDelayMs?: number }) {
+function TerminalHeadline({ start }: { start: boolean }) {
   const [displayed, setDisplayed] = useState<string[]>(['', '', '', ''])
   const [lineIdx, setLineIdx] = useState(0)
   const [charIdx, setCharIdx] = useState(0)
   const [done, setDone] = useState(false)
-  const [started, setStarted] = useState(false)
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
 
   useEffect(() => {
@@ -33,12 +32,10 @@ function TerminalHeadline({ startDelayMs = 900 }: { startDelayMs?: number }) {
       setDone(true)
       return
     }
-    const t0 = setTimeout(() => setStarted(true), startDelayMs)
-    return () => clearTimeout(t0)
-  }, [prefersReducedMotion, startDelayMs])
+  }, [prefersReducedMotion])
 
   useEffect(() => {
-    if (!started || prefersReducedMotion) return
+    if (!start || prefersReducedMotion) return
     if (lineIdx >= TERMINAL_LINES.length) {
       setDone(true)
       return
@@ -60,7 +57,7 @@ function TerminalHeadline({ startDelayMs = 900 }: { startDelayMs?: number }) {
       setCharIdx(0)
     }, 280)
     return () => clearTimeout(t)
-  }, [lineIdx, charIdx, prefersReducedMotion, started])
+  }, [lineIdx, charIdx, prefersReducedMotion, start])
 
   return (
     <h1
@@ -107,6 +104,7 @@ function TerminalHeadline({ startDelayMs = 900 }: { startDelayMs?: number }) {
 }
 
 export default function Hero() {
+  const [forwardDone, setForwardDone] = useState(false)
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault()
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -125,12 +123,13 @@ export default function Hero() {
           <motion.p
             variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
             className="font-mono text-xs font-medium tracking-[0.14em] uppercase text-muted mb-6"
+            onAnimationComplete={() => setForwardDone(true)}
           >
             Forward-Deployed Engineer
           </motion.p>
 
           <div className="mb-6">
-            <TerminalHeadline startDelayMs={1100} />
+            <TerminalHeadline start={forwardDone} />
           </div>
 
           <motion.p
