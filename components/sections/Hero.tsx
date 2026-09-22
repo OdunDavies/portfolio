@@ -1,7 +1,103 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FiMonitor, FiGlobe, FiWifi } from 'react-icons/fi'
+
+const TERMINAL_LINES = [
+  'I embed with the',
+  'problem, build the',
+  'software, and get it',
+  'into production.',
+]
+
+function TerminalHeadline() {
+  const [displayed, setDisplayed] = useState<string[]>(['', '', '', ''])
+  const [lineIdx, setLineIdx] = useState(0)
+  const [charIdx, setCharIdx] = useState(0)
+  const [done, setDone] = useState(false)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+
+  useEffect(() => {
+    const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setPrefersReducedMotion(mql.matches)
+    const onChange = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches)
+    mql.addEventListener('change', onChange)
+    return () => mql.removeEventListener('change', onChange)
+  }, [])
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setDisplayed([...TERMINAL_LINES])
+      setDone(true)
+      return
+    }
+    if (lineIdx >= TERMINAL_LINES.length) {
+      setDone(true)
+      return
+    }
+    const line = TERMINAL_LINES[lineIdx]
+    if (charIdx < line.length) {
+      const t = setTimeout(() => {
+        setDisplayed((prev) => {
+          const next = [...prev]
+          next[lineIdx] = line.slice(0, charIdx + 1)
+          return next
+        })
+        setCharIdx((c) => c + 1)
+      }, 38 + Math.random() * 42)
+      return () => clearTimeout(t)
+    }
+    const t = setTimeout(() => {
+      setLineIdx((l) => l + 1)
+      setCharIdx(0)
+    }, 280)
+    return () => clearTimeout(t)
+  }, [lineIdx, charIdx, prefersReducedMotion])
+
+  return (
+    <h1
+      className="font-mono font-semibold tracking-tight text-ink leading-[1.05] text-[clamp(32px,5vw,52px)]"
+      style={{ letterSpacing: '-0.015em' }}
+      aria-label={TERMINAL_LINES.join(' ')}
+    >
+      {TERMINAL_LINES.map((_, i) => (
+        <span key={i} className="block overflow-hidden" style={{ minHeight: '1.05em' }}>
+          <span className="inline">
+            {i < lineIdx || (i === lineIdx && done) ? (
+              displayed[i]
+            ) : i === lineIdx ? (
+              <>
+                {displayed[i]}
+                <span
+                  aria-hidden="true"
+                  className="inline-block w-[0.6em] h-[1.05em] bg-ink ml-[2px] align-[-0.15em] animate-[blink_0.85s_step-end_infinite]"
+                />
+              </>
+            ) : null}
+            {i === lineIdx - 1 && done && null}
+          </span>
+          {i === lineIdx && !done && displayed[i] === '' && (
+            <span
+              aria-hidden="true"
+              className="inline-block w-[0.6em] h-[1.05em] bg-ink ml-[1px] align-[-0.15em] animate-[blink_0.85s_step-end_infinite]"
+            />
+          )}
+        </span>
+      ))}
+      {done && (
+        <motion.span
+          aria-hidden="true"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [1, 0, 1] }}
+          transition={{ duration: 0.85, repeat: Infinity, ease: 'linear' as const }}
+          className="inline-block w-[0.6em] h-[1.05em] bg-ink ml-[2px] align-[-0.15em]"
+        />
+      )}
+      <style>{`@keyframes blink { 0%,50%{opacity:1} 51%,100%{opacity:0} } @media (prefers-reduced-motion: reduce){ [style*="blink"]{animation:none !important} }`}</style>
+    </h1>
+  )
+}
 
 export default function Hero() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -26,45 +122,12 @@ export default function Hero() {
             Forward-Deployed Engineer
           </motion.p>
 
-          <motion.div
-            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="mb-6"
-          >
-            <h1 className="font-sans font-semibold tracking-tight text-ink leading-[1.05] text-[clamp(32px,5vw,52px)]" style={{ letterSpacing: '-0.015em' }}>
-              <span className="block overflow-hidden">
-                <motion.span
-                  variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
-                  className="block"
-                >
-                  I embed with the
-                </motion.span>
-              </span>
-              <span className="block overflow-hidden">
-                <motion.span
-                  variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.13 } } }}
-                  className="block"
-                >
-                  problem, build the
-                </motion.span>
-              </span>
-              <span className="block overflow-hidden">
-                <motion.span
-                  variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.26 } } }}
-                  className="block"
-                >
-                  software, and get it
-                </motion.span>
-              </span>
-              <span className="block overflow-hidden">
-                <motion.span
-                  variants={{ hidden: { y: '100%' }, show: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.39 } } }}
-                  className="block"
-                >
-                  into production.
-                </motion.span>
-              </span>
-            </h1>
-          </motion.div>
+          <div className="mb-6">
+            <TerminalHeadline />
+            <span className="mono-label text-muted mt-2 block" aria-hidden="true">
+              <span className="inline-block w-2 h-2 bg-ink mr-2 align-middle" /> terminal — typing…
+            </span>
+          </div>
 
           <motion.p
             variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
