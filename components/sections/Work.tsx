@@ -52,6 +52,7 @@ export default function Work() {
           )}
         </div>
 
+        <style>{`@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}} @media (prefers-reduced-motion:reduce){.animate-[blink_0.85s_step-end_infinite]{animation:none !important}}`}</style>
         <motion.div
           key={showAll ? 'all' : 'featured'}
           initial="hidden"
@@ -81,7 +82,10 @@ export default function Work() {
                 <span className="flex items-start justify-between gap-4">
                   <span>
                     <span className="font-display font-bold text-ink text-base leading-tight block">{p.title}</span>
-                    <span className="text-muted text-sm leading-relaxed block mt-1" style={{ fontSize: '14px' }}>{p.desc}</span>
+                    <span className="text-muted text-sm leading-relaxed block mt-1" style={{ fontSize: '14px' }}>
+                      {p.desc}
+                      <span aria-hidden="true" className="inline-block w-[0.55em] h-[0.9em] bg-ink ml-[4px] align-[-0.12em] animate-[blink_0.85s_step-end_infinite]" />
+                    </span>
                   </span>
                   <span className={p.status === 'LIVE' ? 'status-live shrink-0' : 'status-outline shrink-0'}>{p.status}</span>
                 </span>

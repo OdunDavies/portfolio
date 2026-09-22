@@ -59,7 +59,9 @@ export default async function WorkPage({ params }: Props) {
         </h1>
         <p className="text-lg text-muted leading-relaxed max-w-2xl">
           {project.problem}
+          <span aria-hidden="true" className="inline-block w-[0.55em] h-[0.9em] bg-ink ml-[4px] align-[-0.12em] animate-[blink_0.85s_step-end_infinite]" />
         </p>
+        <style>{`@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}`}</style>
       </header>
 
       {/* Hero image */}
@@ -80,7 +82,10 @@ export default async function WorkPage({ params }: Props) {
           <p className="text-xs uppercase tracking-widest text-accent font-medium mb-2">
             Outcome
           </p>
-          <p className="text-xl font-light text-ink">{project.outcome}</p>
+          <p className="text-xl font-light text-ink">
+            {project.outcome}
+            <span aria-hidden="true" className="inline-block w-[0.55em] h-[0.9em] bg-ink ml-[4px] align-[-0.12em] animate-[blink_0.85s_step-end_infinite]" />
+          </p>
         </section>
       )}
 
