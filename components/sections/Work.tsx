@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { projects as libProjects } from '@/lib/projects'
 
 type Project = {
   year: string
@@ -14,66 +15,15 @@ type Project = {
   status: 'LIVE' | 'CASE STUDY'
 }
 
-const allProjects: Project[] = [
-  {
-    year: '2026',
-    title: 'ArtsyBrands',
-    desc: 'ArtsyBrands needed more than a storefront — a full e-commerce infrastructure: branded jewelry catalog, custom domain, transactional email, SSL and secure checkout. Built with Next.js/Supabase/Cloudinary for products and imagery, Paystack webhooks + custom JWT admin for orders, and Resend/React Email for confirmations. Live in production at artsybrandss.com via Cloudflare DNS/SSL handling real payments.',
-    stack: ['Next.js', 'Supabase', 'Cloudinary', 'Paystack', 'Resend', 'Cloudflare'],
-    thumb: '/images/artsybrandss.jpg',
-    href: 'https://artsybrandss.com',
-    status: 'LIVE',
-  },
-  {
-    year: '2026',
-    title: 'Joetheboy — Joseph Ali',
-    desc: 'Portfolio platform for Joseph Ali — videographer & video editor (commercial, documentary, creative). Specializing in color grading, motion graphics and post-production, the site translates his production expertise into a fast, visual portfolio focused on the work and the path for prospective clients to get in touch.',
-    stack: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Netlify'],
-    href: 'https://josephali.netlify.app',
-    status: 'LIVE',
-  },
-  {
-    year: '2026',
-    title: 'HybridGroups',
-    desc: 'Corporate platform for Hybrid Groups Nigeria — Renewable Energy, Agriculture & Food, Water & Beverages. Diversified conglomerate site with sectors, impact and leadership.',
-    stack: ['Next.js', 'Tailwind', 'Vercel'],
-    href: 'https://hybridgroups.vercel.app',
-    status: 'LIVE',
-  },
-  {
-    year: '2026',
-    title: 'MuscleAtlas',
-    desc: 'AI-powered workout app for Nigerian gym-goers, built around a chat-first AI coach that reads logged sets and proactively adjusts the plan.',
-    stack: ['Next.js', 'Supabase', 'Gemini API', 'Tailwind'],
-    thumb: '/images/muscleatlas.jpg',
-    href: 'https://muscleatlas.site',
-    status: 'LIVE',
-  },
-  {
-    year: '2026',
-    title: 'Northpoint Electrical',
-    desc: 'Licensed Master Electrician — Houston & Katy. Service site for Northpoint Houston Electric.',
-    stack: ['Next.js', 'Tailwind', 'Vercel'],
-    href: 'https://northpointelectrical.vercel.app',
-    status: 'LIVE',
-  },
-  {
-    year: '2026',
-    title: 'Appliant',
-    desc: 'Roof and home — Celina, TX roofing & storm restoration. Lead site for Appliant.',
-    stack: ['Next.js', 'Tailwind', 'Vercel'],
-    href: 'https://leads-zeta-sage.vercel.app',
-    status: 'LIVE',
-  },
-  {
-    year: '2024',
-    title: 'SarkiMota Group',
-    desc: 'Built an unsolicited pitch site and content strategy playbook for a Nigerian luxury holding company. Led to a direct interview invitation from the chairman.',
-    stack: ['Next.js', 'Content Strategy', 'Vercel'],
-    href: 'https://sarkinmotacars-odunayo718-gmailcoms-projects.vercel.app',
-    status: 'LIVE',
-  },
-]
+const allProjects: Project[] = libProjects.map((p) => ({
+  year: '2026',
+  title: p.title,
+  desc: p.outcome || p.problem,
+  stack: p.tags,
+  thumb: p.imageSrc || undefined,
+  href: p.href === '#' ? null : p.href,
+  status: 'LIVE' as const,
+}))
 
 export default function Work() {
   const [showAll, setShowAll] = useState(false)
