@@ -104,7 +104,6 @@ function TerminalHeadline({ start }: { start: boolean }) {
 }
 
 export default function Hero() {
-  const [forwardDone, setForwardDone] = useState(false)
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault()
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -120,16 +119,17 @@ export default function Hero() {
           variants={{ hidden: {}, show: { transition: { staggerChildren: 0.13, delayChildren: 0.1 } } }}
           className="max-w-3xl"
         >
-          <motion.p
-            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
+          <p className="font-display font-bold tracking-tight text-ink text-[22px] mb-2">
+            Odunayo Idowu
+          </p>
+          <p
             className="font-mono text-xs font-medium tracking-[0.14em] uppercase text-muted mb-6"
-            onAnimationComplete={() => setForwardDone(true)}
           >
             Forward-Deployed Engineer
-          </motion.p>
+          </p>
 
           <div className="mb-6">
-            <TerminalHeadline start={forwardDone} />
+            <TerminalHeadline start={true} />
           </div>
 
           <motion.p

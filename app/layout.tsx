@@ -7,7 +7,6 @@ import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
 import WayfindingNav from '@/components/WayfindingNav'
 import ScrollToTop from '@/components/ScrollToTop'
-import LoadingScreen from '@/components/LoadingScreen'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://odunayo.xyz'
 
@@ -84,7 +83,6 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background text-ink font-sans antialiased">
-        <LoadingScreen />
         <ScrollProgress />
         <Navbar />
         <WayfindingNav />
