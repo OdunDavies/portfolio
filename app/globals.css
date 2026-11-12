@@ -1,17 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* punk.is-a.dev — brutalist monochrome */
-  --color-background: #ffffff;
-  --color-ink: #000000;
-  --color-accent: #000000;
-  --color-accent-hover: #111111;
-  --color-muted: #737373;
-  --color-border: #000000;
-  --color-border-subtle: #e5e5e5;
-  --color-surface-raised: #f5f5f5;
-  --color-surface-highest: #000000;
+  /* Paper & Cobalt: original panel layout, semantic color roles. */
+  --color-background: #f9f8f5;
+  --color-ink: #202124;
+  --color-accent: #2449d8;
+  --color-accent-hover: #1935af;
+  --color-accent-foreground: #ffffff;
+  --color-muted: #5e626b;
+  --color-border: #30333a;
+  --color-border-strong: #30333a;
+  --color-border-subtle: #deded9;
+  --color-surface-raised: #f0f0eb;
+  --color-surface-highest: #202124;
   --color-panel: #ffffff;
+  --color-success: #24623b;
+  --color-success-surface: #deeee2;
 
   --font-sans: var(--font-geist-sans), Geist, sans-serif;
   --font-mono: var(--font-geist-mono), Geist Mono, monospace;
@@ -20,8 +24,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 64px;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--color-background);
+  color: var(--color-ink);
 }
 
 section {
@@ -34,15 +38,20 @@ section {
 }
 
 ::selection {
-  background: #000000;
-  color: #ffffff;
+  background: var(--color-accent);
+  color: var(--color-accent-foreground);
 }
 
-/* punk: no gradient — flat black mono */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* Keep the existing flat typography and hard borders. */
 .gradient-text {
   background: none;
-  -webkit-text-fill-color: #000000;
-  color: #000000;
+  -webkit-text-fill-color: var(--color-ink);
+  color: var(--color-ink);
   font-weight: 700;
   letter-spacing: -0.04em;
   text-transform: lowercase;
@@ -66,7 +75,7 @@ section {
 
 .reticule-link .reticule-corners span {
   opacity: 0;
-  border: 1px solid #000000;
+  border: 1px solid var(--color-accent);
   width: 7px;
   height: 7px;
   position: absolute;
@@ -119,21 +128,21 @@ section {
 }
 
 .status-live {
-  background: #000000;
-  color: #ffffff;
+  background: var(--color-success-surface);
+  color: var(--color-success);
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: lowercase;
   padding: 4px 8px;
   line-height: 1;
-  border: 1px solid #000000;
+  border: 1px solid var(--color-success);
 }
 
 .status-outline {
   background: transparent;
-  color: #000000;
-  border: 1px solid #000000;
+  color: var(--color-ink);
+  border: 1px solid var(--color-border);
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.12em;
@@ -146,28 +155,59 @@ section {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background: #000000;
-  box-shadow: 0 0 0 0 rgba(0,0,0,0.3);
-  animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  background: var(--color-success);
 }
 
-@keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.3); }
-  70% { box-shadow: 0 0 0 8px rgba(0,0,0,0); }
-  100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+.quiet-action {
+  transition: background-color 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out, scale 160ms ease-out;
+}
+
+.quiet-action:active {
+  scale: 0.98;
+}
+
+.quiet-nav-link {
+  position: relative;
+}
+
+.quiet-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 3px;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.quiet-nav-link:is(:hover, :focus-visible)::after {
+  transform: scaleX(1);
+}
+
+.quiet-project {
+  transition: background-color 160ms ease-out, translate 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .quiet-project:hover {
+    translate: 2px 0;
+  }
 }
 
 .contact-sweep {
   position: relative;
   overflow: hidden;
-  border: 1px solid #000000;
+  border: 1px solid var(--color-border);
 }
 
 .contact-sweep::before {
   content: "";
   position: absolute;
   inset: -1px;
-  border: 1px solid #000000;
+  border: 1px solid var(--color-border);
   pointer-events: none;
 }
 
@@ -175,26 +215,16 @@ section {
   content: "";
   position: absolute;
   inset: -1px;
-  background: conic-gradient(from 0deg, transparent 0deg, transparent 280deg, #000000 360deg);
+  border: 1px solid var(--color-accent);
   opacity: 0;
-  transition: opacity 0.4s ease;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  padding: 1px;
+  transition: opacity 180ms ease-out;
   pointer-events: none;
 }
 
-.contact-sweep:hover::after {
+.contact-sweep:is(:hover, :focus-within)::after {
   opacity: 1;
-  animation: sweep 1.2s linear;
 }
 
-@keyframes sweep {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* punk loading — oh hello */
 .punk-loader {
   position: fixed;
   inset: 0;
@@ -202,8 +232,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000000;
-  color: #ffffff;
+  background: var(--color-ink);
+  color: var(--color-background);
 }
 
 .punk-loader h1 {
@@ -220,11 +250,16 @@ section {
   }
   .gradient-text {
     background: none;
-    -webkit-text-fill-color: #000000;
-    color: #000000;
+    -webkit-text-fill-color: var(--color-ink);
+    color: var(--color-ink);
   }
-  .pulse-dot { animation: none; }
-  .contact-sweep:hover::after { animation: none; }
+  .quiet-action,
+  .quiet-project,
+  .quiet-nav-link::after,
+  .contact-sweep::after { transition: none; }
+  .quiet-action:active { scale: none; }
+  .quiet-project:hover { translate: none; }
+  .animate-pulse { animation: none; }
   html { scroll-behavior: auto; }
 }
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, useCallback } from 'react'
+import { getScrollBehavior } from '@/lib/scroll'
 
 const sections = [
   { id: 'hero', number: '00', label: 'Intro' },
@@ -50,7 +51,7 @@ export default function WayfindingNav() {
                   href={`#${id}`}
                   onClick={(e) => {
                     e.preventDefault()
-                    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    document.getElementById(id)?.scrollIntoView({ behavior: getScrollBehavior(), block: 'start' })
                     history.replaceState(null, '', window.location.pathname + window.location.search)
                   }}
                   onMouseEnter={() => setHovered(id)}

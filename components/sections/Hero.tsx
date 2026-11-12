@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import { FiMonitor, FiGlobe, FiWifi } from 'react-icons/fi'
+import { useQuietReveal } from '@/components/ui/useQuietReveal'
+import { getScrollBehavior } from '@/lib/scroll'
 
 const TERMINAL_LINES = [
   'I embed with the',
@@ -11,217 +11,94 @@ const TERMINAL_LINES = [
   'into production.',
 ]
 
-function TerminalHeadline({ start }: { start: boolean }) {
-  const [displayed, setDisplayed] = useState<string[]>(['', '', '', ''])
-  const [lineIdx, setLineIdx] = useState(0)
-  const [charIdx, setCharIdx] = useState(0)
-  const [done, setDone] = useState(false)
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
-
-  useEffect(() => {
-    const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
-    setPrefersReducedMotion(mql.matches)
-    const onChange = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches)
-    mql.addEventListener('change', onChange)
-    return () => mql.removeEventListener('change', onChange)
-  }, [])
-
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      setDisplayed([...TERMINAL_LINES])
-      setDone(true)
-      return
-    }
-  }, [prefersReducedMotion])
-
-  useEffect(() => {
-    if (!start || prefersReducedMotion) return
-    if (lineIdx >= TERMINAL_LINES.length) {
-      setDone(true)
-      return
-    }
-    const line = TERMINAL_LINES[lineIdx]
-    if (charIdx < line.length) {
-      const t = setTimeout(() => {
-        setDisplayed((prev) => {
-          const next = [...prev]
-          next[lineIdx] = line.slice(0, charIdx + 1)
-          return next
-        })
-        setCharIdx((c) => c + 1)
-      }, 38 + Math.random() * 42)
-      return () => clearTimeout(t)
-    }
-    const t = setTimeout(() => {
-      setLineIdx((l) => l + 1)
-      setCharIdx(0)
-    }, 280)
-    return () => clearTimeout(t)
-  }, [lineIdx, charIdx, prefersReducedMotion, start])
-
-  return (
-    <h1
-      className="font-mono font-semibold tracking-tight text-ink leading-[1.05] text-[clamp(32px,5vw,52px)]"
-      style={{ letterSpacing: '-0.015em' }}
-      aria-label={TERMINAL_LINES.join(' ')}
-    >
-      {TERMINAL_LINES.map((_, i) => (
-        <span key={i} className="block overflow-hidden" style={{ minHeight: '1.05em' }}>
-          <span className="inline">
-            {i < lineIdx || (i === lineIdx && done) ? (
-              displayed[i]
-            ) : i === lineIdx ? (
-              <>
-                {displayed[i]}
-                <span
-                  aria-hidden="true"
-                  className="inline-block w-[0.6em] h-[1.05em] bg-ink ml-[2px] align-[-0.15em] animate-[blink_0.85s_step-end_infinite]"
-                />
-              </>
-            ) : null}
-            {i === lineIdx - 1 && done && null}
-          </span>
-          {i === lineIdx && !done && displayed[i] === '' && (
-            <span
-              aria-hidden="true"
-              className="inline-block w-[0.6em] h-[1.05em] bg-ink ml-[1px] align-[-0.15em] animate-[blink_0.85s_step-end_infinite]"
-            />
-          )}
-        </span>
-      ))}
-      {done && (
-        <motion.span
-          aria-hidden="true"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [1, 0, 1] }}
-          transition={{ duration: 0.85, repeat: Infinity, ease: 'linear' as const }}
-          className="inline-block w-[0.6em] h-[1.05em] bg-ink ml-[2px] align-[-0.15em]"
-        />
-      )}
-      <style>{`@keyframes blink { 0%,50%{opacity:1} 51%,100%{opacity:0} } @media (prefers-reduced-motion: reduce){ [style*="blink"]{animation:none !important} }`}</style>
-    </h1>
-  )
-}
-
 export default function Hero() {
+  const revealRef = useQuietReveal<HTMLDivElement>()
+
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault()
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    document.getElementById(id)?.scrollIntoView({ behavior: getScrollBehavior(), block: 'start' })
     history.replaceState(null, '', window.location.pathname + window.location.search)
   }
 
   return (
     <section id="hero" aria-label="Introduction" className="px-4 md:px-6 py-6 md:py-8 overflow-hidden relative">
-      <div className="max-w-5xl mx-auto border border-border bg-surface-raised p-6 md:p-10 shadow-sm relative">
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.13, delayChildren: 0.1 } } }}
-          className="max-w-3xl"
-        >
+      <div ref={revealRef} className="max-w-5xl mx-auto border border-border bg-surface-raised p-6 md:p-10 shadow-sm relative">
+        <div className="max-w-3xl">
           <p className="font-display font-bold tracking-tight text-ink text-[22px] mb-2">
             Odunayo Idowu
           </p>
-          <p
-            className="font-mono text-xs font-medium tracking-[0.14em] uppercase text-muted mb-6"
-          >
+          <p className="font-mono text-xs font-medium tracking-[0.14em] uppercase text-muted mb-6">
             Forward-Deployed Engineer
           </p>
 
           <div className="mb-6">
-            <TerminalHeadline start={true} />
+            <h1
+              className="font-mono font-semibold tracking-tight text-ink leading-[1.05] text-[clamp(32px,5vw,52px)]"
+              style={{ letterSpacing: '-0.015em' }}
+              aria-label={TERMINAL_LINES.join(' ')}
+            >
+              {TERMINAL_LINES.map((line, index) => (
+                <span key={line} className="block" style={{ minHeight: '1.05em' }}>
+                  {line}
+                  {index === TERMINAL_LINES.length - 1 && (
+                    <span aria-hidden="true" className="inline-block w-[0.45em] h-[0.9em] bg-accent ml-1 align-[-0.08em]" />
+                  )}
+                </span>
+              ))}
+            </h1>
           </div>
 
-          <motion.p
-            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="font-mono text-xs font-medium tracking-[0.14em] uppercase text-muted mb-4"
-          >
+          <p className="font-mono text-xs font-medium tracking-[0.14em] uppercase text-muted mb-4">
             3 live products in production
-          </motion.p>
-
-          <motion.p
-            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="font-sans text-[15px] font-medium leading-relaxed text-muted mb-4 max-w-2xl"
-          >
+          </p>
+          <p className="font-sans text-[15px] font-medium leading-relaxed text-muted mb-4 max-w-2xl">
             I work with businesses needing more than a brochure site, creatives like videographers and designers who need their work center stage, SMEs and startups moving beyond social to owned infrastructure, and organizations needing hands-on support to turn fuzzy requirements into shipped software.
-          </motion.p>
-
-          <motion.p
-            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="font-sans text-[15px] font-medium leading-relaxed text-muted mb-8 max-w-2xl"
-          >
+          </p>
+          <p className="font-sans text-[15px] font-medium leading-relaxed text-muted mb-8 max-w-2xl">
             Full-stack builds, AI integration, and infrastructure — for teams that need someone who can take a problem from requirements to a deployed, working product without a handoff.
-          </motion.p>
+          </p>
 
-          <motion.div
-            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="flex flex-wrap gap-3 mb-10"
-          >
-            <a href="#work" onClick={(e) => handleScroll(e, 'work')} className="inline-flex items-center bg-ink text-background px-6 py-3 font-mono text-xs tracking-widest uppercase hover:opacity-90 transition-opacity">
+          <div className="flex flex-wrap gap-3 mb-10">
+            <a href="#work" onClick={(e) => handleScroll(e, 'work')} className="quiet-action inline-flex items-center bg-accent text-accent-foreground hover:bg-accent-hover px-6 py-3 font-mono text-xs tracking-widest uppercase">
               View Work
             </a>
-            <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="inline-flex items-center border border-border-strong px-6 py-3 font-mono text-xs tracking-widest uppercase bg-background hover:bg-panel transition-colors">
+            <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="quiet-action inline-flex items-center border border-border-strong px-6 py-3 font-mono text-xs tracking-widest uppercase bg-background hover:bg-panel">
               Let&apos;s Talk
             </a>
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-            className="flex items-center gap-2 font-mono text-xs tracking-widest text-muted flex-wrap border-t border-border pt-6"
-          >
-            <span>Understand</span>
-            <span className="text-border-strong">→</span>
-            <span>Build</span>
-            <span className="text-border-strong">→</span>
-            <span>Deploy</span>
-            <span className="text-border-strong">→</span>
+          <div className="flex items-center gap-2 font-mono text-xs tracking-widest text-muted flex-wrap border-t border-border pt-6">
+            <span>Understand</span><span className="text-border-strong">→</span>
+            <span>Build</span><span className="text-border-strong">→</span>
+            <span>Deploy</span><span className="text-border-strong">→</span>
             <span>Iterate</span>
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 } } }}
-            className="mt-8 flex flex-wrap gap-3"
-          >
+          <div className="mt-8 flex flex-wrap gap-3">
             {[
               { Icon: FiMonitor, label: 'Laptop' },
               { Icon: FiGlobe, label: 'Internet' },
               { Icon: FiWifi, label: 'WiFi' },
             ].map(({ Icon, label }) => (
-              <motion.span
-                key={label}
-                animate={{ y: [0, -4, 0] }}
-                transition={{ duration: 2 + Math.random(), repeat: Infinity, ease: 'easeInOut', delay: Math.random() * 0.5 }}
-                className="inline-flex items-center gap-2 border border-border bg-panel px-3 py-1.5 rounded-full"
-              >
+              <span key={label} className="inline-flex items-center gap-2 border border-border bg-panel px-3 py-1.5 rounded-full">
                 <span className="w-6 h-6 rounded-full bg-background border border-border flex items-center justify-center">
                   <Icon className="w-3 h-3 text-ink" />
                 </span>
                 <span className="mono-label text-muted" style={{ fontSize: '10px' }}>{label}</span>
-              </motion.span>
+              </span>
             ))}
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { delay: 1.2, duration: 0.6 } } }}
-            className="mt-10 flex flex-col items-center md:items-start gap-2 md:hidden"
-          >
+          <div className="mt-10 flex flex-col items-center md:items-start gap-2 md:hidden">
             <span className="mono-label text-muted">Scroll</span>
-            <motion.span
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-              className="w-px h-8 bg-border block"
-              aria-hidden="true"
-            />
-          </motion.div>
-        </motion.div>
+            <span className="w-px h-8 bg-border block" aria-hidden="true" />
+          </div>
+        </div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4, transition: { delay: 1, duration: 1 } }}
+      <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.03]"
         style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, #C4622D 1px, transparent 0)',
+          backgroundImage: 'radial-gradient(circle at 1px 1px, var(--color-border-subtle) 1px, transparent 0)',
           backgroundSize: '24px 24px',
         }}
         aria-hidden="true"

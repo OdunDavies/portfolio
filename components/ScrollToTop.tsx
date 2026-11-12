@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { getScrollBehavior } from '@/lib/scroll'
 
 export default function ScrollToTop() {
   const [visible, setVisible] = useState(false)
@@ -12,7 +13,7 @@ export default function ScrollToTop() {
   }, [])
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: getScrollBehavior() })
   }
 
   return (

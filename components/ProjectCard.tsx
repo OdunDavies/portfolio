@@ -1,8 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import type { Project } from '@/lib/types'
+import ProjectPreview from '@/components/ProjectPreview'
 
 interface ProjectCardProps {
   project: Project
@@ -24,14 +24,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       }`}
     >
       {/* Image */}
-      <div className="relative w-full md:w-1/2 aspect-video overflow-hidden bg-border shrink-0">
-        <Image
-          src={project.imageSrc}
-          alt={project.imageAlt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+      <div className="w-full md:w-1/2 shrink-0">
+        <ProjectPreview project={project} sizes="(max-width: 768px) 85vw, 448px" />
       </div>
 
       {/* Content */}

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { projects } from '@/lib/projects'
+import ProjectPreview from '@/components/ProjectPreview'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -59,21 +59,12 @@ export default async function WorkPage({ params }: Props) {
         </h1>
         <p className="text-lg text-muted leading-relaxed max-w-2xl">
           {project.problem}
-          <span aria-hidden="true" className="inline-block w-[0.55em] h-[0.9em] bg-ink ml-[4px] align-[-0.12em] animate-[blink_0.85s_step-end_infinite]" />
         </p>
-        <style>{`@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}`}</style>
       </header>
 
       {/* Hero image */}
-      <div className="relative w-full aspect-video overflow-hidden bg-border mb-12">
-        <Image
-          src={project.imageSrc}
-          alt={project.imageAlt}
-          fill
-          className="object-cover"
-          priority
-          sizes="(max-width: 1024px) 100vw, 896px"
-        />
+      <div className="w-full mb-12">
+        <ProjectPreview project={project} preload sizes="(max-width: 896px) 92vw, 848px" />
       </div>
 
       {/* Outcome */}
@@ -84,7 +75,6 @@ export default async function WorkPage({ params }: Props) {
           </p>
           <p className="text-xl font-light text-ink">
             {project.outcome}
-            <span aria-hidden="true" className="inline-block w-[0.55em] h-[0.9em] bg-ink ml-[4px] align-[-0.12em] animate-[blink_0.85s_step-end_infinite]" />
           </p>
         </section>
       )}

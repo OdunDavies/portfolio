@@ -7,6 +7,8 @@ export interface Project {
   href: string
   imageSrc: string
   imageAlt: string
+  imageWidth: number
+  imageHeight: number
   status?: 'shipped' | 'development'
 }
 

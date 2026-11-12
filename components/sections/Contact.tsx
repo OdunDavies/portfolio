@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useQuietReveal } from '@/components/ui/useQuietReveal'
 import { SiGithub, SiGmail, SiWhatsapp, SiX } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
 
@@ -13,14 +13,12 @@ const links = [
 ]
 
 export default function Contact() {
+  const revealRef = useQuietReveal<HTMLElement>()
   return (
-    <motion.section
+    <section
+      ref={revealRef}
       id="contact"
       aria-label="Contact"
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="px-4 md:px-6 py-6 md:py-8"
     >
       <div className="max-w-5xl mx-auto border-2 border-ink bg-surface-raised p-1 shadow-md">
@@ -31,7 +29,7 @@ export default function Contact() {
           </p>
           <a
             href="mailto:odunayodev@gmail.com"
-            className="inline-flex items-center bg-ink text-background px-6 py-3 font-mono text-xs tracking-widest uppercase hover:opacity-90 transition-opacity"
+            className="quiet-action inline-flex items-center bg-accent text-accent-foreground hover:bg-accent-hover px-6 py-3 font-mono text-xs tracking-widest uppercase"
           >
             Let&apos;s talk →
           </a>
@@ -43,12 +41,12 @@ export default function Contact() {
                 href={href}
                 target={href.startsWith('mailto') ? undefined : '_blank'}
                 rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                className="group flex items-center gap-2 border border-border bg-panel pl-1 pr-3 py-1 rounded-full hover:bg-ink hover:border-ink transition-colors"
+                className="quiet-action group flex items-center gap-2 border border-border bg-panel pl-1 pr-3 py-1 rounded-full hover:bg-accent hover:border-accent focus-visible:bg-accent focus-visible:border-accent"
               >
-                <span className="w-7 h-7 rounded-full bg-background border border-border flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:border-accent transition-colors">
-                  <Icon className="w-3.5 h-3.5 text-ink group-hover:text-white" />
+                <span className="w-7 h-7 rounded-full bg-background border border-border flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:border-accent group-focus-visible:bg-accent group-focus-visible:border-accent transition-colors">
+                  <Icon className="w-3.5 h-3.5 text-ink group-hover:text-accent-foreground group-focus-visible:text-accent-foreground" />
                 </span>
-                <span className="mono-label text-muted group-hover:text-background transition-colors">{label}</span>
+                <span className="mono-label text-muted group-hover:text-accent-foreground group-focus-visible:text-accent-foreground transition-colors">{label}</span>
               </a>
             ))}
           </div>
@@ -56,6 +54,6 @@ export default function Contact() {
           <p className="mono-label text-muted mt-8">Odunayo Idowu · MMXXVI</p>
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }
