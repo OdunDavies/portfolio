@@ -18,7 +18,7 @@ export const palettes: Palette[] = [
 ]
 
 export const motionPresets = [
-  { id:'original', name:'Site baseline', description:'Current site motion: short section entrances, readable terminal headline, and project hover.', source:'https://brittanychiang.com', credit:'Site baseline / earlier inspiration' },
+  { id:'original', name:'Original motion', description:'Original typewriter headline, blinking cursors, floating chips, and project hover.', source:'https://brittanychiang.com', credit:'Original baseline / earlier inspiration' },
   { id:'quiet', name:'Quiet precision', description:'Short 320 ms entrances, 6 px of travel, quick focus and press feedback.', source:'https://emilkowal.ski', credit:'Emil Kowalski / restrained interface motion' },
   { id:'editorial', name:'Editorial flow', description:'Soft 620 ms panel entrances with staggered project and image reveals.', source:'https://www.dennissnellenberg.com', credit:'Dennis Snellenberg / work presentation' },
   { id:'tactile', name:'Tactile studio', description:'Spring-like entrances, tiny magnetic CTAs, and responsive project thumbnails.', source:'https://paco.me', credit:'Paco Coursey / interface craft' },
@@ -26,7 +26,7 @@ export const motionPresets = [
 ] as const
 
 type Settings = { palette: string; motion: string; reduce: boolean }
-const storageKey = 'odunayo-portfolio-prototype-v1'
+const storageKey = 'odunayo-portfolio-prototype-v2'
 const cssTokens: Record<keyof Colors, string> = {
   background:'--color-background', ink:'--color-ink', accent:'--color-accent', accentHover:'--color-accent-hover', onAccent:'--prototype-on-accent', muted:'--color-muted', border:'--color-border', subtle:'--color-border-subtle', surface:'--color-surface-raised', panel:'--color-panel', successBg:'--prototype-success-bg', successInk:'--prototype-success-ink',
 }
@@ -46,7 +46,7 @@ export function mountPrototypeLab() {
   const previousAttributes = attributeNames.map(name => [name, root.getAttribute(name)] as const)
   const tokenNames = [...Object.values(cssTokens), '--color-surface-highest', '--color-accent-foreground', '--color-border-strong']
   const previousTokens = tokenNames.map(name => [name, root.style.getPropertyValue(name)] as const)
-  let settings: Settings = { palette:'paper-cobalt', motion:'quiet', reduce:false }
+  let settings: Settings = { palette:'original', motion:'original', reduce:false }
   let observer: IntersectionObserver | null = null
   const animations = new Set<Animation>()
   const listeners: (() => void)[] = []

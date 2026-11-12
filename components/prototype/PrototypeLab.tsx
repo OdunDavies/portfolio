@@ -13,19 +13,19 @@ export default function PrototypeLab({ children }: { children: ReactNode }) {
         <div className="prototype-lab-heading">
           <div>
             <p className="prototype-lab-kicker">Original UI / Color + motion study</p>
-            <h2>Portfolio lab <span data-current-palette>Paper & Cobalt</span></h2>
+            <h2>Portfolio lab <span data-current-palette>Original / Black & White</span></h2>
           </div>
           <button type="button" data-collapse aria-expanded="true" aria-controls="prototype-options">Minimize</button>
         </div>
         <div id="prototype-options">
           <div className="prototype-lab-fields">
             <label>Color combination
-              <select name="prototype-palette" defaultValue="paper-cobalt">
+              <select name="prototype-palette" defaultValue="original">
                 {palettes.map(palette => <option value={palette.id} key={palette.id}>{palette.name}</option>)}
               </select>
             </label>
             <label>Motion direction
-              <select name="prototype-motion" defaultValue="quiet">
+              <select name="prototype-motion" defaultValue="original">
                 {motionPresets.map(preset => <option value={preset.id} key={preset.id}>{preset.name}</option>)}
               </select>
             </label>

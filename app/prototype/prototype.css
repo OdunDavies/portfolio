@@ -21,7 +21,7 @@ html[data-portfolio-prototype] :focus-visible { outline:2px solid var(--color-ac
 /* Existing typography, panel geometry, images, content and spacing are reused. */
 html[data-prototype-motion]:not([data-prototype-motion="original"]) .pulse-dot { animation:none; }
 html[data-prototype-motion]:not([data-prototype-motion="original"]) #hero .mt-8 > span { transform:none!important; }
-html[data-prototype-motion]:not([data-prototype-motion="original"]) #work [class*="blink"] { animation:none!important; display:none; }
+html[data-prototype-motion]:not([data-prototype-motion="original"]) #work [class*="blink"], html[data-prototype-motion]:not([data-prototype-motion="original"]) #work .terminal-cursor { animation:none!important; display:none; }
 html[data-prototype-motion]:not([data-prototype-motion="original"]) #hero h1 { position:relative; }
 html[data-prototype-motion]:not([data-prototype-motion="original"]):not([data-prototype-motion="technical"]) #hero h1 > * { visibility:hidden; }
 html[data-prototype-motion]:not([data-prototype-motion="original"]):not([data-prototype-motion="technical"]) #hero h1::after { content:'I embed with the\A problem, build the\A software, and get it\A into production.'; white-space:pre-line; position:absolute; inset:0; color:var(--color-ink); }

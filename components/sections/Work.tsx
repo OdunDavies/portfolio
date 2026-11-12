@@ -1,26 +1,42 @@
 'use client'
 
 import { projects } from '@/lib/projects'
-import { useQuietReveal } from '@/components/ui/useQuietReveal'
+import { motion, useReducedMotion } from 'framer-motion'
 import ProjectPreview from '@/components/ProjectPreview'
 
 export default function Work() {
-  const revealRef = useQuietReveal<HTMLElement>()
+  const reducedMotion = useReducedMotion()
 
   return (
-    <section ref={revealRef} id="work" aria-label="Work" className="px-4 md:px-6 py-6 md:py-8">
+    <motion.section
+      id="work"
+      aria-label="Work"
+      initial={reducedMotion ? false : { opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: reducedMotion ? 0 : 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="px-4 md:px-6 py-6 md:py-8"
+    >
       <div className="max-w-5xl mx-auto border border-border bg-surface-raised p-6 md:p-10 shadow-sm">
         <div className="flex items-baseline justify-between gap-4 mb-10">
           <h2 className="mono-label text-muted">WORK — DEPLOY LOG</h2>
           <span className="mono-label shrink-0 text-muted">{String(projects.length).padStart(2, '0')} projects</span>
         </div>
 
-        <div id="project-list" className="border-y border-border divide-y divide-border">
+        <motion.div
+          id="project-list"
+          initial="hidden"
+          animate="show"
+          variants={{ hidden: {}, show: { transition: { staggerChildren: reducedMotion ? 0 : 0.06, delayChildren: reducedMotion ? 0 : 0.05 } } }}
+          className="border-y border-border divide-y divide-border"
+        >
           {projects.map(project => (
-            <article
+            <motion.article
               data-reveal-row
               key={project.slug}
-              className="quiet-project group grid grid-cols-1 gap-4 py-6 md:grid-cols-[2.5rem_16rem_minmax(0,1fr)] md:gap-6 md:px-4 lg:grid-cols-[2.5rem_18rem_minmax(0,1fr)] hover:bg-panel"
+              variants={{ hidden: reducedMotion ? {} : { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { duration: reducedMotion ? 0 : 0.4, ease: [0.22, 1, 0.36, 1] } } }}
+              whileHover={reducedMotion ? undefined : { x: 4 }}
+              className="group grid grid-cols-1 gap-4 py-6 md:grid-cols-[2.5rem_16rem_minmax(0,1fr)] md:gap-6 md:px-4 lg:grid-cols-[2.5rem_18rem_minmax(0,1fr)] hover:bg-panel transition-colors duration-200"
             >
               <span className="mono-label text-muted md:pt-1">2026</span>
               <div className="min-w-0">
@@ -42,6 +58,7 @@ export default function Work() {
                 </div>
                 <p className="text-muted text-sm leading-relaxed mt-2" style={{ fontSize: '14px' }}>
                   {project.outcome || project.problem}
+                  <span aria-hidden="true" className="terminal-cursor" />
                 </p>
                 <div className="flex flex-wrap gap-1.5 mt-3">
                   {project.tags.map(tag => (
@@ -51,10 +68,10 @@ export default function Work() {
                   ))}
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

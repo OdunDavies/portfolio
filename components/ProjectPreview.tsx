@@ -68,7 +68,7 @@ export default function ProjectPreview({ project, sizes, preload = false }: Prop
           <>
             <div className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-border bg-background px-4 py-3 md:px-6">
               <h2 id={titleId} className="font-display text-sm font-semibold md:text-base">{project.title}</h2>
-              <button type="button" autoFocus onClick={() => setOpen(false)} className="quiet-action min-h-11 shrink-0 border border-border px-4 font-mono text-xs hover:border-accent hover:text-accent">
+              <button type="button" autoFocus onClick={() => setOpen(false)} className="min-h-11 shrink-0 border border-border px-4 font-mono text-xs hover:border-accent hover:text-accent transition-colors duration-150">
                 Close <span aria-hidden="true">×</span>
               </button>
             </div>

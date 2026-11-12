@@ -59,6 +59,7 @@ export default async function WorkPage({ params }: Props) {
         </h1>
         <p className="text-lg text-muted leading-relaxed max-w-2xl">
           {project.problem}
+          <span aria-hidden="true" className="terminal-cursor" />
         </p>
       </header>
 
@@ -75,6 +76,7 @@ export default async function WorkPage({ params }: Props) {
           </p>
           <p className="text-xl font-light text-ink">
             {project.outcome}
+            <span aria-hidden="true" className="terminal-cursor" />
           </p>
         </section>
       )}

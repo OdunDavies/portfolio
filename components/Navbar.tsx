@@ -47,7 +47,7 @@ export default function Navbar() {
             <ul className="flex items-center gap-3 md:gap-6" role="list">
               {navLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <a href={href} onClick={(e) => handleNavClick(e, href)} className="quiet-nav-link font-mono text-[11px] md:text-xs tracking-widest text-muted hover:text-accent focus-visible:text-accent transition-colors duration-150 py-2 px-1 inline-block">
+                  <a href={href} onClick={(e) => handleNavClick(e, href)} className="font-mono text-[11px] md:text-xs tracking-widest text-muted hover:text-ink transition-colors py-2 px-1 inline-block">
                     {label.toUpperCase()}
                   </a>
                 </li>
